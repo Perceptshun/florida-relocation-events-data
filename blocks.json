@@ -1,0 +1,30 @@
+{
+  "_meta": {
+    "description": "Curated content blocks per community. Edit this file via the GitHub web UI to update what shows on each community page. Each block is optional — leave any field blank or remove the key and the site falls back to a polished empty state.",
+    "blockTypes": {
+      "edaNote": "1-paragraph insider voice from Eda. Original first-person content.",
+      "schoolSpotlight": "{ name, body } — featured A-rated school. Refresh quarterly.",
+      "placeOfMonth": "{ name, body, url? } — restaurant, park, or local landmark of the month.",
+      "openHouses": "Array of { address, date (ISO), time, url? } — upcoming open houses this week."
+    },
+    "communities": [
+      "lake-nona", "windermere", "winter-park", "dr-phillips", "lake-conway", "oviedo",
+      "avalon-park", "hunters-creek", "sanford", "altamonte-springs", "apopka", "clermont"
+    ]
+  },
+  "updatedAt": null,
+  "byCommunity": {
+    "lake-nona": {},
+    "windermere": {},
+    "winter-park": {},
+    "dr-phillips": {},
+    "lake-conway": {},
+    "oviedo": {},
+    "avalon-park": {},
+    "hunters-creek": {},
+    "sanford": {},
+    "altamonte-springs": {},
+    "apopka": {},
+    "clermont": {}
+  }
+}
