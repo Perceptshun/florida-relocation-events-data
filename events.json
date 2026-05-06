@@ -1,17 +1,861 @@
 {
-  "updatedAt": "2026-05-06T23:26:30.052Z",
+  "updatedAt": "2026-05-06T23:28:41.148Z",
   "byCommunity": {
-    "lake-nona": [],
-    "windermere": [],
-    "winter-park": [],
-    "dr-phillips": [],
-    "lake-conway": [],
-    "oviedo": [],
-    "avalon-park": [],
-    "hunters-creek": [],
-    "sanford": [],
-    "altamonte-springs": [],
-    "apopka": [],
-    "clermont": []
+    "lake-nona": [
+      {
+        "title": "Closer Look: Conversations with a Curator - Professor Amy C. Smith",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "url": "https://www.eventbrite.com/e/closer-look-conversations-with-a-curator-professor-amy-c-smith-tickets-1644557227939",
+        "source": "Eventbrite",
+        "summary": "Join us for a free online talk with Professor Amy Smith on the British sculptor, Eric Stanford (1932-2020)"
+      },
+      {
+        "title": "OT Work Webinar 4 - Boundaries in the workplace, Disclosing a Diagnosis",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "url": "https://www.eventbrite.ie/e/ot-work-webinar-4-boundaries-in-the-workplace-disclosing-a-diagnosis-tickets-1981137613934",
+        "source": "Eventbrite",
+        "summary": "Webinar 4 - Boundaries and Assertiveness in the workplace, Disclosing a Diagnosis at Work"
+      },
+      {
+        "title": "James Hype  at The Vanguard",
+        "startsAt": "2026-05-08T00:00:00.000Z",
+        "endsAt": "2026-05-09T00:00:00.000Z",
+        "venue": "The Vanguard (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/james-hype-at-the-vanguard-tickets-1979836836273",
+        "source": "Eventbrite",
+        "summary": "Insomniac & The Vanguard Present"
+      },
+      {
+        "title": "Shrek Burlesque and Bingo",
+        "startsAt": "2026-05-08T00:00:00.000Z",
+        "endsAt": "2026-05-08T00:00:00.000Z",
+        "venue": "Gravity Taproom (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/shrek-burlesque-and-bingo-tickets-1982403828215",
+        "source": "Eventbrite",
+        "summary": "Get into the swamp, it's time to peel back some layers!"
+      },
+      {
+        "title": "oasis",
+        "startsAt": "2026-05-08T00:00:00.000Z",
+        "endsAt": "2026-05-08T00:00:00.000Z",
+        "venue": "Altira Pool + Lounge (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/oasis-tickets-1980096672450",
+        "source": "Eventbrite",
+        "summary": "Oasis is a rooftop experience designed for creators, entrepreneurs, business professionals, and community leaders to socialize."
+      },
+      {
+        "title": "Destroy Lonely At The Vanguard",
+        "startsAt": "2026-05-09T00:00:00.000Z",
+        "endsAt": "2026-05-10T00:00:00.000Z",
+        "venue": "The Vanguard (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/destroy-lonely-at-the-vanguard-tickets-1988587297137",
+        "source": "Eventbrite",
+        "summary": "The Vanguard Present"
+      },
+      {
+        "title": "Last Knight Out Spring '26 Grad Party | The Beacham Downtown Orlando",
+        "startsAt": "2026-05-09T00:00:00.000Z",
+        "endsAt": "2026-05-10T00:00:00.000Z",
+        "venue": "The Beacham (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/last-knight-out-spring-26-grad-party-the-beacham-downtown-orlando-tickets-1983794711384",
+        "source": "Eventbrite",
+        "summary": "The Biggest Graduation Party In Central Florida! Grads FREE til midnight w/ regalia. All Trades, Certificates, Degrees! Congrats C/O 2026"
+      },
+      {
+        "title": "Daylite Orlando's House & Coffee Party - May 9 - FREE ENTRY",
+        "startsAt": "2026-05-09T00:00:00.000Z",
+        "endsAt": "2026-05-09T00:00:00.000Z",
+        "venue": "Qreate Coffee Creative Village (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/daylite-orlandos-house-coffee-party-may-9-free-entry-tickets-1987409528399",
+        "source": "Eventbrite",
+        "summary": "Start your \"Rolling Loud Weekend\" with a Morning Coffee Party!"
+      }
+    ],
+    "windermere": [
+      {
+        "title": "Narrative Therapy  Techniques for Identifying Meaning with Ben Yalom",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/narrative-therapy-techniques-for-identifying-meaning-with-ben-yalom-tickets-1981387078088",
+        "source": "Eventbrite",
+        "summary": "A beautiful and rare opportunity for therapists to see Ben work with powerful narrative therapy techniques in a live demonstration."
+      },
+      {
+        "title": "Closer Look: Conversations with a Curator - Professor Amy C. Smith",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "url": "https://www.eventbrite.com/e/closer-look-conversations-with-a-curator-professor-amy-c-smith-tickets-1644557227939",
+        "source": "Eventbrite",
+        "summary": "Join us for a free online talk with Professor Amy Smith on the British sculptor, Eric Stanford (1932-2020)"
+      },
+      {
+        "title": "OT Work Webinar 4 - Boundaries in the workplace, Disclosing a Diagnosis",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "url": "https://www.eventbrite.ie/e/ot-work-webinar-4-boundaries-in-the-workplace-disclosing-a-diagnosis-tickets-1981137613934",
+        "source": "Eventbrite",
+        "summary": "Webinar 4 - Boundaries and Assertiveness in the workplace, Disclosing a Diagnosis at Work"
+      },
+      {
+        "title": "Stitched Dog Card - Cerdyn Cŵn wedi'i Bwytho",
+        "startsAt": "2026-05-14T00:00:00.000Z",
+        "endsAt": "2026-05-14T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/stitched-dog-card-cerdyn-cwn-wedii-bwytho-tickets-1980982782830",
+        "source": "Eventbrite",
+        "summary": "stitching a dog onto card - pwytho ci ar gerdyn"
+      },
+      {
+        "title": "SAK PASE ❤️: Orlando's #1 Haitian Flag Day Festival 2026 ⭐️",
+        "startsAt": "2026-05-17T00:00:00.000Z",
+        "endsAt": "2026-05-17T00:00:00.000Z",
+        "venue": "Wall Street Plaza (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/sak-pase-orlandos-1-haitian-flag-day-festival-2026-tickets-1980527304482",
+        "source": "Eventbrite",
+        "summary": "Celebrate Haitian Flag Day at SAK PASE ❤️ in Downtown Orlando—live music, Haitian food, culture & festival vibes at Wall Street Plaza."
+      },
+      {
+        "title": "The AI Edge: Supercharge Your Startup Vision",
+        "startsAt": "2026-05-18T00:00:00.000Z",
+        "endsAt": "2026-05-18T00:00:00.000Z",
+        "url": "https://www.eventbrite.com/e/the-ai-edge-supercharge-your-startup-vision-tickets-1425498467289",
+        "source": "Eventbrite",
+        "summary": "Get ready to level up your startup game with cutting-edge AI technology at The AI Edge event - it's time to supercharge your vision!"
+      },
+      {
+        "title": "Taste of Altamonte Food & Wine",
+        "startsAt": "2026-05-21T00:00:00.000Z",
+        "endsAt": "2026-05-21T00:00:00.000Z",
+        "venue": "Cranes Roost Park (Altamonte Springs, FL)",
+        "url": "https://www.eventbrite.com/e/taste-of-altamonte-food-wine-tickets-1976390576417",
+        "source": "Eventbrite",
+        "summary": "Don't miss Taste of Altamonte! Join us to Taste, Sip, & Savor unlimited food, drinks with live music lakeside at Cranes Roost Park."
+      },
+      {
+        "title": "LAKE COUNTY - 7 HR Grant Funded FBC Continuing Education",
+        "startsAt": "2026-05-26T00:00:00.000Z",
+        "endsAt": "2026-05-26T00:00:00.000Z",
+        "venue": "Lake County Agriculture Center (Tavares, FL)",
+        "url": "https://www.eventbrite.com/e/lake-county-7-hr-grant-funded-fbc-continuing-education-tickets-1669770972929",
+        "source": "Eventbrite",
+        "summary": "Register Early - Seating is Limited"
+      }
+    ],
+    "winter-park": [
+      {
+        "title": "Free Movie: The Devil Wears Prada 2",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "venue": "Aloma Cinema Grill (Winter Park, FL)",
+        "url": "https://www.eventbrite.com/e/free-movie-the-devil-wears-prada-2-tickets-1988347444732",
+        "source": "Eventbrite",
+        "summary": "The long-awaited sequel is here! See \"The Devil Wears Prada 2\" on Thursday, May 7, at Aloma Cinema Grill at 4 PM. Open to 18+ guests."
+      },
+      {
+        "title": "Spring Cleaning Shred Event",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "venue": "Nelson Financial Planning (Winter Park, FL)",
+        "url": "https://www.eventbrite.com/e/spring-cleaning-shred-event-tickets-1979058500249",
+        "source": "Eventbrite",
+        "summary": "Shred Day at Nelson Financial Planning"
+      },
+      {
+        "title": "Closer Look: Conversations with a Curator - Professor Amy C. Smith",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "url": "https://www.eventbrite.com/e/closer-look-conversations-with-a-curator-professor-amy-c-smith-tickets-1644557227939",
+        "source": "Eventbrite",
+        "summary": "Join us for a free online talk with Professor Amy Smith on the British sculptor, Eric Stanford (1932-2020)"
+      },
+      {
+        "title": "OT Work Webinar 4 - Boundaries in the workplace, Disclosing a Diagnosis",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "url": "https://www.eventbrite.ie/e/ot-work-webinar-4-boundaries-in-the-workplace-disclosing-a-diagnosis-tickets-1981137613934",
+        "source": "Eventbrite",
+        "summary": "Webinar 4 - Boundaries and Assertiveness in the workplace, Disclosing a Diagnosis at Work"
+      },
+      {
+        "title": "Sip, Taste & Connect  | Mingle In ORL",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "venue": "The Wine Room on Park Avenue (Winter Park, FL)",
+        "url": "https://www.eventbrite.com/e/sip-taste-connect-mingle-in-orl-tickets-1987648644602",
+        "source": "Eventbrite",
+        "summary": "If you’ve been saying “I need to get out more\" this is for you!"
+      },
+      {
+        "title": "Wacky Winter Park Scavenger Hunt",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "venue": "CFS Coffee Winter Park (Winter Park, FL)",
+        "url": "https://www.eventbrite.com/e/wacky-winter-park-scavenger-hunt-tickets-1735805794859",
+        "source": "Eventbrite",
+        "summary": "Wacky Winter Park Scavenger Hunt"
+      },
+      {
+        "title": "Cosmic Disco",
+        "startsAt": "2026-05-08T00:00:00.000Z",
+        "endsAt": "2026-05-09T00:00:00.000Z",
+        "venue": "480 N Wine Bar (Winter Park, FL)",
+        "url": "https://www.eventbrite.com/e/cosmic-disco-tickets-1987514158350",
+        "source": "Eventbrite",
+        "summary": "Come boogie with us Friday May 8th 9pm Cosmic Disco event is coming to 480 N Wine Bar in Winter Park Village."
+      },
+      {
+        "title": "Seeking Rents + Welcome to Florida: Live Meet & Greet (Winter Park)",
+        "startsAt": "2026-05-09T00:00:00.000Z",
+        "endsAt": "2026-05-09T00:00:00.000Z",
+        "venue": "Austin's Coffee (Winter Park, FL)",
+        "url": "https://www.eventbrite.com/e/seeking-rents-welcome-to-florida-live-meet-greet-winter-park-tickets-1987101653537",
+        "source": "Eventbrite",
+        "summary": "Two of Florida's top podcasts — Seeking Rents and Welcome to Florida — are joining forces."
+      }
+    ],
+    "dr-phillips": [
+      {
+        "title": "Women Expo Powered by the Dr. Phillips Chamber of Commerce",
+        "startsAt": "2026-05-06T00:00:00.000Z",
+        "endsAt": "2026-05-06T00:00:00.000Z",
+        "venue": "HarborChase of Dr. Phillips (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/women-expo-powered-by-the-dr-phillips-chamber-of-commerce-tickets-1983922062294",
+        "source": "Eventbrite",
+        "summary": "Enjoy an Amazing Day of Pampering, Makeovers, Health & Wellness, Door Prizes, Networking, Guest Speakers, Shopping, Food & More! Enjoy a"
+      },
+      {
+        "title": "Dr Phillips Chamber of Commerce Scholarship  OPEN at WOMEN'S EXPO",
+        "startsAt": "2026-05-06T00:00:00.000Z",
+        "endsAt": "2026-05-06T00:00:00.000Z",
+        "venue": "HarborChase of Dr. Phillips (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/dr-phillips-chamber-of-commerce-scholarship-open-at-womens-expo-tickets-1987569910105",
+        "source": "Eventbrite",
+        "summary": "To reward a local graduating High School Senior, with a passion for Business, with a scholarship to be towards College, Technical School,"
+      },
+      {
+        "title": "Hooked On BINGO & Karaoke",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "venue": "King Cajun Crawfish (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/hooked-on-bingo-karaoke-tickets-1984928458452",
+        "source": "Eventbrite",
+        "summary": "Get ready to have a blast with BINGO and Karaoke at our event - it's gonna be a night full of fun, music, and prizes!"
+      },
+      {
+        "title": "Closer Look: Conversations with a Curator - Professor Amy C. Smith",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "url": "https://www.eventbrite.com/e/closer-look-conversations-with-a-curator-professor-amy-c-smith-tickets-1644557227939",
+        "source": "Eventbrite",
+        "summary": "Join us for a free online talk with Professor Amy Smith on the British sculptor, Eric Stanford (1932-2020)"
+      },
+      {
+        "title": "OT Work Webinar 4 - Boundaries in the workplace, Disclosing a Diagnosis",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "url": "https://www.eventbrite.ie/e/ot-work-webinar-4-boundaries-in-the-workplace-disclosing-a-diagnosis-tickets-1981137613934",
+        "source": "Eventbrite",
+        "summary": "Webinar 4 - Boundaries and Assertiveness in the workplace, Disclosing a Diagnosis at Work"
+      },
+      {
+        "title": "Krabs & Karaoke Brunch",
+        "startsAt": "2026-05-09T00:00:00.000Z",
+        "endsAt": "2026-05-09T00:00:00.000Z",
+        "venue": "King Cajun Crawfish & Oyster Bar (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/krabs-karaoke-brunch-tickets-1988377173652",
+        "source": "Eventbrite",
+        "summary": "Join us for a fun-filled brunch featuring delicious sea and land dishes, karaoke singing, dancing and good vibes."
+      },
+      {
+        "title": "CAM U ORLANDO Complimentary Lunch, Networking and CEU at Rocco's Tacos",
+        "startsAt": "2026-05-12T00:00:00.000Z",
+        "endsAt": "2026-05-12T00:00:00.000Z",
+        "venue": "Rocco's Tacos & Tequila Bar (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/cam-u-orlando-complimentary-lunch-networking-and-ceu-at-roccos-tacos-tickets-1984409826209",
+        "source": "Eventbrite",
+        "summary": "Spice up your afternoon at Rocco’s Tacos on May 12 with lunch, networking & a 1-hour HR/ELE CEU with Suzanne Perkins of NV5!"
+      },
+      {
+        "title": "Free Brevard Community Mental Health Educational Symposium",
+        "startsAt": "2026-05-12T00:00:00.000Z",
+        "endsAt": "2026-05-12T00:00:00.000Z",
+        "venue": "Melbourne Auditorium (Melbourne, FL)",
+        "url": "https://www.eventbrite.com/e/free-brevard-community-mental-health-educational-symposium-tickets-1978644812899",
+        "source": "Eventbrite",
+        "summary": "Free CEU's speakers, and panelists with primary Mental Health Vendors handing out valuable information."
+      }
+    ],
+    "lake-conway": [
+      {
+        "title": "Florida Veteran Overwatch Program Training May 6 Orange County -Orlando",
+        "startsAt": "2026-05-06T00:00:00.000Z",
+        "endsAt": "2026-05-06T00:00:00.000Z",
+        "venue": "Embassy Suites by Hilton Orlando Lake Buena Vista Resort (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/florida-veteran-overwatch-program-training-may-6-orange-county-orlando-tickets-1976774719399",
+        "source": "Eventbrite",
+        "summary": "Veteran Suicide Prevention Training for Veteran Service Professionals"
+      },
+      {
+        "title": "The Neurobiology of Trauma & Memory",
+        "startsAt": "2026-05-12T00:00:00.000Z",
+        "endsAt": "2026-05-12T00:00:00.000Z",
+        "url": "https://www.eventbrite.com/e/the-neurobiology-of-trauma-memory-tickets-1983823846528",
+        "source": "Eventbrite",
+        "summary": "This webinar examines how severe stress and trauma can alter memory formation and subsequent recall."
+      },
+      {
+        "title": "Infant Mental Health",
+        "startsAt": "2026-05-15T00:00:00.000Z",
+        "endsAt": "2026-05-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.com/e/infant-mental-health-registration-1964569911490",
+        "source": "Eventbrite",
+        "summary": "Live, Online zoom."
+      },
+      {
+        "title": "SAK PASE ❤️: Orlando's #1 Haitian Flag Day Festival 2026 ⭐️",
+        "startsAt": "2026-05-17T00:00:00.000Z",
+        "endsAt": "2026-05-17T00:00:00.000Z",
+        "venue": "Wall Street Plaza (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/sak-pase-orlandos-1-haitian-flag-day-festival-2026-tickets-1980527304482",
+        "source": "Eventbrite",
+        "summary": "Celebrate Haitian Flag Day at SAK PASE ❤️ in Downtown Orlando—live music, Haitian food, culture & festival vibes at Wall Street Plaza."
+      },
+      {
+        "title": "The AI Edge: Supercharge Your Startup Vision",
+        "startsAt": "2026-05-18T00:00:00.000Z",
+        "endsAt": "2026-05-18T00:00:00.000Z",
+        "url": "https://www.eventbrite.com/e/the-ai-edge-supercharge-your-startup-vision-tickets-1425498467289",
+        "source": "Eventbrite",
+        "summary": "Get ready to level up your startup game with cutting-edge AI technology at The AI Edge event - it's time to supercharge your vision!"
+      },
+      {
+        "title": "Taste of Altamonte Food & Wine",
+        "startsAt": "2026-05-21T00:00:00.000Z",
+        "endsAt": "2026-05-21T00:00:00.000Z",
+        "venue": "Cranes Roost Park (Altamonte Springs, FL)",
+        "url": "https://www.eventbrite.com/e/taste-of-altamonte-food-wine-tickets-1976390576417",
+        "source": "Eventbrite",
+        "summary": "Don't miss Taste of Altamonte! Join us to Taste, Sip, & Savor unlimited food, drinks with live music lakeside at Cranes Roost Park."
+      },
+      {
+        "title": "Bakersfield Career Fair",
+        "startsAt": "2026-05-27T00:00:00.000Z",
+        "endsAt": "2026-05-27T00:00:00.000Z",
+        "url": "https://www.eventbrite.com/e/bakersfield-career-fair-tickets-295406437607",
+        "source": "Eventbrite",
+        "summary": "Connect with Bakersfield Employers"
+      },
+      {
+        "title": "The House of Boleyn",
+        "startsAt": "2026-05-27T00:00:00.000Z",
+        "endsAt": "2026-05-27T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/the-house-of-boleyn-tickets-1983072636639",
+        "source": "Eventbrite",
+        "summary": "Join bestselling author and historian Tracy Borman as she brings the story behind her new novel, The House of Boleyn, vividly to life."
+      }
+    ],
+    "oviedo": [
+      {
+        "title": "Wine Down Wednesday Networking Social",
+        "startsAt": "2026-05-06T00:00:00.000Z",
+        "endsAt": "2026-05-06T00:00:00.000Z",
+        "venue": "Oviedo Park Pub (Oviedo, FL)",
+        "url": "https://www.eventbrite.com/e/wine-down-wednesday-networking-social-tickets-1988129503865",
+        "source": "Eventbrite",
+        "summary": "Unwind midweek with great people, good vibes, and even better wine at our Wednesday networking social!"
+      },
+      {
+        "title": "FREE Movie, Car Show & Food Truck Night",
+        "startsAt": "2026-05-08T00:00:00.000Z",
+        "endsAt": "2026-05-08T00:00:00.000Z",
+        "venue": "Oviedo Amphitheatre & Cultural Center (Oviedo, FL)",
+        "url": "https://www.eventbrite.com/e/free-movie-car-show-food-truck-night-tickets-1985288743073",
+        "source": "Eventbrite",
+        "summary": "Join us for our FREE showing of the movie CARS."
+      },
+      {
+        "title": "The Neurobiology of Trauma & Memory",
+        "startsAt": "2026-05-12T00:00:00.000Z",
+        "endsAt": "2026-05-12T00:00:00.000Z",
+        "url": "https://www.eventbrite.com/e/the-neurobiology-of-trauma-memory-tickets-1983823846528",
+        "source": "Eventbrite",
+        "summary": "This webinar examines how severe stress and trauma can alter memory formation and subsequent recall."
+      },
+      {
+        "title": "The Dating Game: Wellness Tools Edition",
+        "startsAt": "2026-05-12T00:00:00.000Z",
+        "endsAt": "2026-05-12T00:00:00.000Z",
+        "venue": "2020 Winter Springs Blvd (Oviedo, FL)",
+        "url": "https://www.eventbrite.com/e/the-dating-game-wellness-tools-edition-tickets-1987797606150",
+        "source": "Eventbrite",
+        "summary": "What if finding what works for your body felt a little more like a good match…and a lot less like trial and error?"
+      },
+      {
+        "title": "2026 Friday Night Exclusive CFHE Pre-Shopping Event",
+        "startsAt": "2026-05-15T00:00:00.000Z",
+        "endsAt": "2026-05-15T00:00:00.000Z",
+        "venue": "River Run Church (Chuluota, FL)",
+        "url": "https://www.eventbrite.com/e/2026-friday-night-exclusive-cfhe-pre-shopping-event-tickets-1981254215693",
+        "source": "Eventbrite",
+        "summary": "The CFHE Used Curriculum Sale's Friday Night Exclusive $25 Pre-shopping Event provides a quiet, stress-free, crowd-free atmosphere."
+      },
+      {
+        "title": "Infant Mental Health",
+        "startsAt": "2026-05-15T00:00:00.000Z",
+        "endsAt": "2026-05-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.com/e/infant-mental-health-registration-1964569911490",
+        "source": "Eventbrite",
+        "summary": "Live, Online zoom."
+      },
+      {
+        "title": "You're Invited: Lunch, Tour & Meet and the Well65+ Care Team",
+        "startsAt": "2026-05-15T00:00:00.000Z",
+        "endsAt": "2026-05-15T00:00:00.000Z",
+        "venue": "AdventHealth Well 65+ Oviedo (Oviedo, FL)",
+        "url": "https://www.eventbrite.com/e/youre-invited-lunch-tour-meet-and-the-well65-care-team-tickets-1983875235233",
+        "source": "Eventbrite",
+        "summary": "Lunch & Learn for 65+! Meet our newest provider, tour our office, and learn about personalized senior care in a friendly, relaxed setting."
+      },
+      {
+        "title": "IRATION \"WHERE IT ALL BEGAN SUMMER TOUR 2026\" - COCOA",
+        "startsAt": "2026-05-15T00:00:00.000Z",
+        "endsAt": "2026-05-15T00:00:00.000Z",
+        "venue": "Cocoa Riverfront Park (Cocoa, FL)",
+        "url": "https://www.eventbrite.com/e/iration-where-it-all-began-summer-tour-2026-cocoa-tickets-1977731214301",
+        "source": "Eventbrite",
+        "summary": "IRATION \"WHERE IT ALL BEGAN SUMMER TOUR 2026\" w/ TRIBAL SEEDS & ARTIKAL SOUND SYSTEM live in COCOA"
+      }
+    ],
+    "avalon-park": [
+      {
+        "title": "Keg Social College Night",
+        "startsAt": "2026-05-06T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "venue": "KEG SOCIAL ORLANDO - Dining & Entertainment (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/keg-social-college-night-tickets-1000887580697",
+        "source": "Eventbrite",
+        "summary": "Join us for college night at Keg Social EVERY Wednesday from 10PM-2AM(21+) for unlimited bowling, drink specials, and half off activities!"
+      },
+      {
+        "title": "Medicare Essentials Workshop",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "venue": "12000 E Colonial Dr (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/medicare-essentials-workshop-tickets-1681496745029",
+        "source": "Eventbrite",
+        "summary": "This Medicare Essential workshop will give you and your family clear, easy-to-understand guidance— without the confusing jargon."
+      },
+      {
+        "title": "Launch After Dark: A Friday Night Party",
+        "startsAt": "2026-05-08T00:00:00.000Z",
+        "endsAt": "2026-05-08T00:00:00.000Z",
+        "venue": "Launch Family Entertainment Park Orlando, FL (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/launch-after-dark-a-friday-night-party-tickets-1987532271527",
+        "source": "Eventbrite",
+        "summary": "Fridays just got an upgrade. Welcome to your new go-to Friday night experience where high-energy fun meets a night out for ALL ages!"
+      },
+      {
+        "title": "Moms & Margaritas  | East Orlando Moms Night Out",
+        "startsAt": "2026-05-08T00:00:00.000Z",
+        "endsAt": "2026-05-08T00:00:00.000Z",
+        "venue": "12789 Waterford Lakes Pkwy (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/moms-margaritas-east-orlando-moms-night-out-tickets-1986115936230",
+        "source": "Eventbrite",
+        "summary": "Take a break—you deserve it Join us for a fun night out with other East Orlando moms to sip, laugh, and unwind."
+      },
+      {
+        "title": "A Mothers's Day Picnic Lunch to Remember",
+        "startsAt": "2026-05-09T00:00:00.000Z",
+        "endsAt": "2026-05-09T00:00:00.000Z",
+        "venue": "3651 Avalon Park E Blvd (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/a-motherss-day-picnic-lunch-to-remember-tickets-1986394894602",
+        "source": "Eventbrite",
+        "summary": "Treat Mom to a magical picnic with food, games, music & bouquet making plus a special gift. A day she'll never forget."
+      },
+      {
+        "title": "Mother's Day Flower Event at Oh So Sweet Avalon!",
+        "startsAt": "2026-05-09T00:00:00.000Z",
+        "endsAt": "2026-05-09T00:00:00.000Z",
+        "venue": "Oh So Sweet Avalon (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/mothers-day-flower-event-at-oh-so-sweet-avalon-tickets-1985966094048",
+        "source": "Eventbrite",
+        "summary": "Create the perfect personalized gift for Mom, Grandmother, Godmother, Wife or someone special!"
+      },
+      {
+        "title": "A Mother's Day Celebration Pilates & Matcha",
+        "startsAt": "2026-05-09T00:00:00.000Z",
+        "endsAt": "2026-05-09T00:00:00.000Z",
+        "venue": "Viola's Ice Cream Social (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/a-mothers-day-celebration-pilates-matcha-tickets-1988214406812",
+        "source": "Eventbrite",
+        "summary": "Bring your mom to celebrate! Pilates Strengthen your body, clear your mind, and feel your best. Enjoy free 12 oz cup of matcha or latte!"
+      },
+      {
+        "title": "The Neurobiology of Trauma & Memory",
+        "startsAt": "2026-05-12T00:00:00.000Z",
+        "endsAt": "2026-05-12T00:00:00.000Z",
+        "url": "https://www.eventbrite.com/e/the-neurobiology-of-trauma-memory-tickets-1983823846528",
+        "source": "Eventbrite",
+        "summary": "This webinar examines how severe stress and trauma can alter memory formation and subsequent recall."
+      }
+    ],
+    "hunters-creek": [
+      {
+        "title": "Emirates Connect | B2B Networking | SMEs & Startups",
+        "startsAt": "2026-05-09T00:00:00.000Z",
+        "endsAt": "2026-05-09T00:00:00.000Z",
+        "url": "https://www.eventbrite.com/e/emirates-connect-b2b-networking-smes-startups-tickets-1980273655812",
+        "source": "Eventbrite",
+        "summary": "Connect. Collaborate. Grow. Dubai’s Weekly Meet-Up for SMEs & Startups."
+      },
+      {
+        "title": "Henry VII: Treason and Trust",
+        "startsAt": "2026-05-15T00:00:00.000Z",
+        "endsAt": "2026-05-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/henry-vii-treason-and-trust-tickets-1983072347775",
+        "source": "Eventbrite",
+        "summary": "Discover the story of one of England’s unlikeliest monarchs."
+      },
+      {
+        "title": "SAK PASE ❤️: Orlando's #1 Haitian Flag Day Festival 2026 ⭐️",
+        "startsAt": "2026-05-17T00:00:00.000Z",
+        "endsAt": "2026-05-17T00:00:00.000Z",
+        "venue": "Wall Street Plaza (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/sak-pase-orlandos-1-haitian-flag-day-festival-2026-tickets-1980527304482",
+        "source": "Eventbrite",
+        "summary": "Celebrate Haitian Flag Day at SAK PASE ❤️ in Downtown Orlando—live music, Haitian food, culture & festival vibes at Wall Street Plaza."
+      },
+      {
+        "title": "The AI Edge: Supercharge Your Startup Vision",
+        "startsAt": "2026-05-18T00:00:00.000Z",
+        "endsAt": "2026-05-18T00:00:00.000Z",
+        "url": "https://www.eventbrite.com/e/the-ai-edge-supercharge-your-startup-vision-tickets-1425498467289",
+        "source": "Eventbrite",
+        "summary": "Get ready to level up your startup game with cutting-edge AI technology at The AI Edge event - it's time to supercharge your vision!"
+      },
+      {
+        "title": "Managing concerns about attorneys and deputies",
+        "startsAt": "2026-05-20T00:00:00.000Z",
+        "endsAt": "2026-05-20T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/managing-concerns-about-attorneys-and-deputies-tickets-1978159019879",
+        "source": "Eventbrite",
+        "summary": "Join us for the final webinar in the series, where we'll be focusing on managing concerns about attorneys and deputies."
+      },
+      {
+        "title": "Taste of Altamonte Food & Wine",
+        "startsAt": "2026-05-21T00:00:00.000Z",
+        "endsAt": "2026-05-21T00:00:00.000Z",
+        "venue": "Cranes Roost Park (Altamonte Springs, FL)",
+        "url": "https://www.eventbrite.com/e/taste-of-altamonte-food-wine-tickets-1976390576417",
+        "source": "Eventbrite",
+        "summary": "Don't miss Taste of Altamonte! Join us to Taste, Sip, & Savor unlimited food, drinks with live music lakeside at Cranes Roost Park."
+      },
+      {
+        "title": "Orlando Carnival Downtown - Mas Band Parade & Concert",
+        "startsAt": "2026-05-24T00:00:00.000Z",
+        "endsAt": "2026-05-24T00:00:00.000Z",
+        "venue": "Camping World Stadium (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/orlando-carnival-downtown-mas-band-parade-concert-registration-1965572358837",
+        "source": "Eventbrite",
+        "summary": "Orlando Carnival Downtown 2026 FREE ENTRY • BIGGER • BOLDER • MORE CULTURAL THAN EVER"
+      },
+      {
+        "title": "Bakersfield Career Fair",
+        "startsAt": "2026-05-27T00:00:00.000Z",
+        "endsAt": "2026-05-27T00:00:00.000Z",
+        "url": "https://www.eventbrite.com/e/bakersfield-career-fair-tickets-295406437607",
+        "source": "Eventbrite",
+        "summary": "Connect with Bakersfield Employers"
+      }
+    ],
+    "sanford": [
+      {
+        "title": "MainStage Karaoke EVERY Wednesday at 8 PM!",
+        "startsAt": "2026-05-06T00:00:00.000Z",
+        "endsAt": "2026-05-06T00:00:00.000Z",
+        "venue": "Link Sports Bar (Lake Mary, FL)",
+        "url": "https://www.eventbrite.com/e/mainstage-karaoke-every-wednesday-at-8-pm-tickets-1988482476616",
+        "source": "Eventbrite",
+        "summary": "Grace Gaming Group proudly presents MainStage Karaoke EVERY Wednesday at 8 PM! We’re turning up the volume and bringing unforgettable energy"
+      },
+      {
+        "title": "Winedown Wednesday (Sanford)",
+        "startsAt": "2026-05-06T00:00:00.000Z",
+        "endsAt": "2026-05-06T00:00:00.000Z",
+        "venue": "Chronic Guru Dispensary & Lounge - Sanford (Sanford, FL)",
+        "url": "https://www.eventbrite.com/e/winedown-wednesday-sanford-tickets-1980241817583",
+        "source": "Eventbrite",
+        "summary": "Long day? Come join us for unlimited infused wine or sangria with live music! Ideal for midweek socializing, date night, or after-work drink"
+      },
+      {
+        "title": "Musical Bingo 3-Hour Lunch Cruise Aboard the Barbara Lee",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "venue": "St Johns Rivership Company (Sanford, FL)",
+        "url": "https://www.eventbrite.com/e/musical-bingo-3-hour-lunch-cruise-aboard-the-barbara-lee-tickets-1987071670858",
+        "source": "Eventbrite",
+        "summary": "Musical Bingo Cruise on the Barbara Lee in Sanford—lunch, music, prizes, and scenic fun on the river."
+      },
+      {
+        "title": "Tilt Thursday @ Links Sports Bar",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "venue": "Link Sports Bar (Lake Mary, FL)",
+        "url": "https://www.eventbrite.com/e/tilt-thursday-links-sports-bar-tickets-1988090636612",
+        "source": "Eventbrite",
+        "summary": "Join us for an exciting poker night with prizes, great food, and extra chips waiting for you."
+      },
+      {
+        "title": "Self-Care City Scavenger Hunt: Based on Hot Habits Series - Sanford Area",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "venue": "401 E 1st S*Recommended scavenger starting point or other city spot of your choice! (YOU MUST USE PDF TICKETS EMAILED FOR EVENT- NO MOBILE APP OR QR CODES ACCEPTED) (Sanford, FL)",
+        "url": "https://www.eventbrite.com/e/self-care-city-scavenger-hunt-based-on-hot-habits-series-sanford-area-tickets-1056013537919",
+        "source": "Eventbrite",
+        "summary": "Self-Care City Scavenger Hunt – Based on Hot Habits Book Series. A fun hunt in your city to help you explore the sites and build wellness!"
+      },
+      {
+        "title": "Tilt Thursday @ Links of Lake Mary",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "venue": "Link Sports Bar (Lake Mary, FL)",
+        "url": "https://www.eventbrite.com/e/tilt-thursday-links-of-lake-mary-tickets-1988561639394",
+        "source": "Eventbrite",
+        "summary": "Grace Gaming Group is turning up the heat every Thursday at Links Sports Bar — bigger energy, louder tables, and nonstop action all night."
+      },
+      {
+        "title": "Dirty Bingo (Sanford)",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "venue": "Chronic Guru Dispensary & Lounge - Sanford (Sanford, FL)",
+        "url": "https://www.eventbrite.com/e/dirty-bingo-sanford-tickets-1980242028213",
+        "source": "Eventbrite",
+        "summary": "Bingo just got a whole lot naughtier... This free “adults only\" bingo night features lively hosts, interactive gameplay, and prizes!"
+      },
+      {
+        "title": "Live Music Night (Sanford)",
+        "startsAt": "2026-05-08T00:00:00.000Z",
+        "endsAt": "2026-05-08T00:00:00.000Z",
+        "venue": "Chronic Guru Dispensary & Lounge - Sanford (Sanford, FL)",
+        "url": "https://www.eventbrite.com/e/live-music-night-sanford-tickets-1981878197038",
+        "source": "Eventbrite",
+        "summary": "Live lounge music with chill vibes, good people, and an intimate late-night atmosphere featuring performances by a local artist."
+      }
+    ],
+    "altamonte-springs": [
+      {
+        "title": "Altamonte Springs Business Networking",
+        "startsAt": "2026-05-06T00:00:00.000Z",
+        "endsAt": "2026-05-06T00:00:00.000Z",
+        "venue": "360 W State Rd 436 (Altamonte Springs, FL)",
+        "url": "https://www.eventbrite.com/e/altamonte-springs-business-networking-tickets-1986162165503",
+        "source": "Eventbrite",
+        "summary": "Meet local pros, swap ideas, and grow your biz at Apopka’s top networking hangout!"
+      },
+      {
+        "title": "Crafts and Mocktails",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "venue": "1877 W State Rd 434 (Longwood, FL)",
+        "url": "https://www.eventbrite.com/e/crafts-and-mocktails-tickets-1986773322490",
+        "source": "Eventbrite",
+        "summary": "Grab your friends (or come solo and meet new ones!) for a relaxed girls’ night filled with good vibes, laughter, and creativity."
+      },
+      {
+        "title": "Closer Look: Conversations with a Curator - Professor Amy C. Smith",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "url": "https://www.eventbrite.com/e/closer-look-conversations-with-a-curator-professor-amy-c-smith-tickets-1644557227939",
+        "source": "Eventbrite",
+        "summary": "Join us for a free online talk with Professor Amy Smith on the British sculptor, Eric Stanford (1932-2020)"
+      },
+      {
+        "title": "OT Work Webinar 4 - Boundaries in the workplace, Disclosing a Diagnosis",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "url": "https://www.eventbrite.ie/e/ot-work-webinar-4-boundaries-in-the-workplace-disclosing-a-diagnosis-tickets-1981137613934",
+        "source": "Eventbrite",
+        "summary": "Webinar 4 - Boundaries and Assertiveness in the workplace, Disclosing a Diagnosis at Work"
+      },
+      {
+        "title": "Self-Care City Scavenger Hunt–Based on Hot Habits Series: Altamonte Springs",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "venue": "*Recommended scavenger starting point or other city spot of your choice! (YOU MUST USE PDF TICKETS EMAILED FOR EVENT- NO MOBILE APP OR QR CODES ACCEPTED) (Altamonte Springs, FL)",
+        "url": "https://www.eventbrite.com/e/self-care-city-scavenger-huntbased-on-hot-habits-series-altamonte-springs-tickets-1065049193809",
+        "source": "Eventbrite",
+        "summary": "Self-Care City Scavenger Hunt – Based on Hot Habits Book Series. A fun hunt in your city to help you explore the sites and build wellness!"
+      },
+      {
+        "title": "Structure the Relationship. Master the Conversation",
+        "startsAt": "2026-05-08T00:00:00.000Z",
+        "endsAt": "2026-05-08T00:00:00.000Z",
+        "venue": "Sihle Insurance Group (Altamonte Springs, FL)",
+        "url": "https://www.eventbrite.com/e/structure-the-relationship-master-the-conversation-tickets-1985145425406",
+        "source": "Eventbrite",
+        "summary": "Learn the Bucket System and the conversations that guide clients forward. Structure relationships and master communication in real estate."
+      },
+      {
+        "title": "Mother's Day Movement and Shop with lululemon x Tempra Pilates",
+        "startsAt": "2026-05-09T00:00:00.000Z",
+        "endsAt": "2026-05-09T00:00:00.000Z",
+        "venue": "lululemon Altamonte Mall Pop-Up (Altamonte Springs, FL)",
+        "url": "https://www.eventbrite.ca/e/mothers-day-movement-and-shop-with-lululemon-x-tempra-pilates-tickets-1988504248737",
+        "source": "Eventbrite",
+        "summary": "Join us in-store as we celebrate and relax with our friends from Tempra Pilates!"
+      },
+      {
+        "title": "Mastering Money: Strategies for Financial Growth and Business Success",
+        "startsAt": "2026-05-09T00:00:00.000Z",
+        "endsAt": "2026-05-09T00:00:00.000Z",
+        "venue": "385 Douglas Ave (Altamonte Springs, FL)",
+        "url": "https://www.eventbrite.com/e/mastering-money-strategies-for-financial-growth-and-business-success-tickets-1110875641949",
+        "source": "Eventbrite",
+        "summary": "Learn how to level up your financial game and boost your business success at our event Mastering Money: Strategies for Financial Growth!"
+      }
+    ],
+    "apopka": [
+      {
+        "title": "Closer Look: Conversations with a Curator - Professor Amy C. Smith",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "url": "https://www.eventbrite.com/e/closer-look-conversations-with-a-curator-professor-amy-c-smith-tickets-1644557227939",
+        "source": "Eventbrite",
+        "summary": "Join us for a free online talk with Professor Amy Smith on the British sculptor, Eric Stanford (1932-2020)"
+      },
+      {
+        "title": "OT Work Webinar 4 - Boundaries in the workplace, Disclosing a Diagnosis",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "url": "https://www.eventbrite.ie/e/ot-work-webinar-4-boundaries-in-the-workplace-disclosing-a-diagnosis-tickets-1981137613934",
+        "source": "Eventbrite",
+        "summary": "Webinar 4 - Boundaries and Assertiveness in the workplace, Disclosing a Diagnosis at Work"
+      },
+      {
+        "title": "Free Zumba for Seniors  Every Tuesday 10:00am  at Metro Health of Apopka",
+        "startsAt": "2026-05-12T00:00:00.000Z",
+        "endsAt": "2026-05-12T00:00:00.000Z",
+        "venue": "MetroHealth, Inc. of Apopka (Apopka, FL)",
+        "url": "https://www.eventbrite.com/e/free-zumba-for-seniors-every-tuesday-1000am-at-metro-health-of-apopka-tickets-1978436825804",
+        "source": "Eventbrite",
+        "summary": "Join Metro Health for Zumba with Rosi and Marie every Tuesday at 10am"
+      },
+      {
+        "title": "Free Educational Seminar on Estate Planning - Apopka",
+        "startsAt": "2026-05-12T00:00:00.000Z",
+        "endsAt": "2026-05-12T00:00:00.000Z",
+        "venue": "Morenas Restaurant (Apopka, FL)",
+        "url": "https://www.eventbrite.com/e/free-educational-seminar-on-estate-planning-apopka-tickets-1988194821231",
+        "source": "Eventbrite",
+        "summary": "Come join National Association of Family Services at this FREE event and learn how we help families leave behind their legacy."
+      },
+      {
+        "title": "OCPN City Gathering | May 2026",
+        "startsAt": "2026-05-13T00:00:00.000Z",
+        "endsAt": "2026-05-13T00:00:00.000Z",
+        "venue": "One Family Church (Apopka, FL)",
+        "url": "https://www.eventbrite.com/e/ocpn-city-gathering-may-2026-tickets-1981674487738",
+        "source": "Eventbrite",
+        "summary": "For anyone with a heart for the city. Join us for lunch (provided), fellowship, and prayer!"
+      },
+      {
+        "title": "Diversity & Inclusion Symposium",
+        "startsAt": "2026-05-13T00:00:00.000Z",
+        "endsAt": "2026-05-13T00:00:00.000Z",
+        "url": "https://www.eventbrite.com.au/e/diversity-inclusion-symposium-registration-1977352987013",
+        "source": "Eventbrite",
+        "summary": "Turning principles into practice"
+      },
+      {
+        "title": "Free Senior MetroHealth Guitar Group – Beginners Welcome",
+        "startsAt": "2026-05-13T00:00:00.000Z",
+        "endsAt": "2026-05-13T00:00:00.000Z",
+        "venue": "MetroHealth, Inc. of Apopka (Apopka, FL)",
+        "url": "https://www.eventbrite.com/e/free-senior-metrohealth-guitar-group-beginners-welcome-tickets-1984585255924",
+        "source": "Eventbrite",
+        "summary": "This beginner-friendly group is perfect for those who want to learn guitar, practice different genres of music, and enjoy time socializing"
+      },
+      {
+        "title": "Crossroad at Kelly Park By Dream Finders Homes - Amenity Grand Opening",
+        "startsAt": "2026-05-16T00:00:00.000Z",
+        "endsAt": "2026-05-16T00:00:00.000Z",
+        "venue": "Crossroads at Kelly Park by Dream Finders Homes (Apopka, FL)",
+        "url": "https://www.eventbrite.com/e/crossroad-at-kelly-park-by-dream-finders-homes-amenity-grand-opening-tickets-1988597724325",
+        "source": "Eventbrite",
+        "summary": "Your new favorite place is here. Join us as we celebrate the grand opening of Crossroads at Kelly Park’s brand-new amenity!"
+      }
+    ],
+    "clermont": [
+      {
+        "title": "Closer Look: Conversations with a Curator - Professor Amy C. Smith",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "url": "https://www.eventbrite.com/e/closer-look-conversations-with-a-curator-professor-amy-c-smith-tickets-1644557227939",
+        "source": "Eventbrite",
+        "summary": "Join us for a free online talk with Professor Amy Smith on the British sculptor, Eric Stanford (1932-2020)"
+      },
+      {
+        "title": "OT Work Webinar 4 - Boundaries in the workplace, Disclosing a Diagnosis",
+        "startsAt": "2026-05-07T00:00:00.000Z",
+        "endsAt": "2026-05-07T00:00:00.000Z",
+        "url": "https://www.eventbrite.ie/e/ot-work-webinar-4-boundaries-in-the-workplace-disclosing-a-diagnosis-tickets-1981137613934",
+        "source": "Eventbrite",
+        "summary": "Webinar 4 - Boundaries and Assertiveness in the workplace, Disclosing a Diagnosis at Work"
+      },
+      {
+        "title": "Housing and Hunger Solutions Luncheon and Simulation",
+        "startsAt": "2026-05-09T00:00:00.000Z",
+        "endsAt": "2026-05-09T00:00:00.000Z",
+        "venue": "Real Life Christian Church | Clermont Campus (Clermont, FL)",
+        "url": "https://www.eventbrite.com/e/housing-and-hunger-solutions-luncheon-and-simulation-tickets-1984573061450",
+        "source": "Eventbrite",
+        "summary": "Join us for a fun, hands-on lunch tackling hunger and housing challenges up close!"
+      },
+      {
+        "title": "AI After Dark - May 2026",
+        "startsAt": "2026-05-12T00:00:00.000Z",
+        "endsAt": "2026-05-12T00:00:00.000Z",
+        "venue": "Community Foundation of South Lake County (Clermont, FL)",
+        "url": "https://www.eventbrite.com/e/ai-after-dark-may-2026-tickets-1987453948260",
+        "source": "Eventbrite",
+        "summary": "Explore how AI transforms business. Join local pros for real talk, tools, and ideas to boost your work—after hours, at AI After Dark."
+      },
+      {
+        "title": "Diversity & Inclusion Symposium",
+        "startsAt": "2026-05-13T00:00:00.000Z",
+        "endsAt": "2026-05-13T00:00:00.000Z",
+        "url": "https://www.eventbrite.com.au/e/diversity-inclusion-symposium-registration-1977352987013",
+        "source": "Eventbrite",
+        "summary": "Turning principles into practice"
+      },
+      {
+        "title": "Medicare Made Easy with Ryan Schalk",
+        "startsAt": "2026-05-13T00:00:00.000Z",
+        "endsAt": "2026-05-13T00:00:00.000Z",
+        "venue": "Cooper Memorial Library (Clermont, FL)",
+        "url": "https://www.eventbrite.com/e/medicare-made-easy-with-ryan-schalk-tickets-1988035400399",
+        "source": "Eventbrite",
+        "summary": "Our FREE Medicare workshop offers the insights you need. Tap Sign Up now and make your Medicare journey smooth and stress-free!"
+      },
+      {
+        "title": "Her Transitions",
+        "startsAt": "2026-05-15T00:00:00.000Z",
+        "endsAt": "2026-05-15T00:00:00.000Z",
+        "venue": "835 7th St ste 1 (Clermont, FL)",
+        "url": "https://www.eventbrite.com/e/her-transitions-tickets-1988529929549",
+        "source": "Eventbrite",
+        "summary": "This gathering offers a welcoming space for women navigating life transitions, where they can gain tools to help navigate these changes."
+      },
+      {
+        "title": "Bloom Into Wellness: A Women's Health Event",
+        "startsAt": "2026-05-16T00:00:00.000Z",
+        "endsAt": "2026-05-16T00:00:00.000Z",
+        "venue": "Florida Blue Center - Clermont (Clermont, FL)",
+        "url": "https://www.eventbrite.com/e/bloom-into-wellness-a-womens-health-event-tickets-1987132085560",
+        "source": "Eventbrite",
+        "summary": "Join us for Bloom Into Wellness, a fun in-person day all about celebrating and boosting women's health!"
+      }
+    ]
   }
 }
