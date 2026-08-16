@@ -1,0 +1,946 @@
+<title>Happiness Gauge</title>
+
+<style>
+  /* ---- Tokens: light is the base set; dark redefines the same names ---- */
+  :root {
+    --ground:      #EDF2F0;
+    --surface:     #FBFCFB;
+    --surface-sunk:#F3F7F5;
+    --line:        #D8E2DE;
+    --line-soft:   #E6EDEA;
+    --ink:         #10201D;
+    --ink-2:       #40534E;
+    --ink-3:       #6C7D78;
+    --accent:      #0E7A69;
+    --on-accent:   #FBFCFB;
+    --accent-soft: #DCEEE8;
+    --accent-line: #9FCDC1;
+    --warm:        #A8681B;
+    --danger:      #9E3B2C;
+
+    /* sequential ramp, light -> dark, used for score chips */
+    --s1: #CFE5DE; --s2: #97CCBE; --s3: #55A995; --s4: #17806C; --s5: #0B5A4C;
+    --on-s1: #0B3A31; --on-s2: #0B3A31; --on-s3: #04231D; --on-s4: #F2FAF7; --on-s5: #F2FAF7;
+
+    --fill-top:    rgba(14, 122, 105, 0.20);
+    --fill-bot:    rgba(14, 122, 105, 0.02);
+
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, "Cascadia Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+    --r: 3px;
+    --shadow: 0 1px 2px rgba(16, 32, 29, .05), 0 8px 24px -16px rgba(16, 32, 29, .28);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:      #0B1211;
+      --surface:     #131C1A;
+      --surface-sunk:#0F1716;
+      --line:        #253330;
+      --line-soft:   #1C2725;
+      --ink:         #E7EEEB;
+      --ink-2:       #A9BBB6;
+      --ink-3:       #7B8D88;
+      --accent:      #45C3A9;
+      --on-accent:   #04231D;
+      --accent-soft: #16302B;
+      --accent-line: #2C6659;
+      --warm:        #D9A03C;
+      --danger:      #D8705E;
+
+      --s1: #1B3F38; --s2: #276556; --s3: #328B75; --s4: #47B79C; --s5: #7FDCC4;
+      --on-s1: #CFE5DE; --on-s2: #E4F3EE; --on-s3: #04231D; --on-s4: #04231D; --on-s5: #04231D;
+
+      --fill-top:    rgba(69, 195, 169, 0.22);
+      --fill-bot:    rgba(69, 195, 169, 0.02);
+
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground:      #0B1211;
+    --surface:     #131C1A;
+    --surface-sunk:#0F1716;
+    --line:        #253330;
+    --line-soft:   #1C2725;
+    --ink:         #E7EEEB;
+    --ink-2:       #A9BBB6;
+    --ink-3:       #7B8D88;
+    --accent:      #45C3A9;
+    --on-accent:   #04231D;
+    --accent-soft: #16302B;
+    --accent-line: #2C6659;
+    --warm:        #D9A03C;
+    --danger:      #D8705E;
+
+    --s1: #1B3F38; --s2: #276556; --s3: #328B75; --s4: #47B79C; --s5: #7FDCC4;
+    --on-s1: #CFE5DE; --on-s2: #E4F3EE; --on-s3: #04231D; --on-s4: #04231D; --on-s5: #04231D;
+
+    --fill-top:    rgba(69, 195, 169, 0.22);
+    --fill-bot:    rgba(69, 195, 169, 0.02);
+
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 40px 20px 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* ---- Masthead ---- */
+  .masthead { display: flex; flex-direction: column; gap: 8px; padding-bottom: 4px; }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .eyebrow .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+  h1 {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: clamp(26px, 4.4vw, 36px);
+    font-weight: 600;
+    letter-spacing: -.02em;
+    text-wrap: balance;
+  }
+  .lede { margin: 0; color: var(--ink-2); max-width: 62ch; }
+
+  /* ---- Panels ---- */
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .panel-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .panel-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin: 0;
+    font-weight: 500;
+  }
+  .panel-aside { font-family: var(--mono); font-size: 11px; color: var(--ink-3); letter-spacing: .04em; }
+  .note { margin: 0; font-size: 13px; color: var(--ink-3); max-width: 68ch; }
+  .note strong { color: var(--ink-2); font-weight: 600; }
+
+  /* ---- Segmented scale control ---- */
+  .segmented { display: flex; flex-wrap: wrap; gap: 6px; }
+  .seg {
+    appearance: none;
+    font: 500 13px/1 var(--mono);
+    letter-spacing: .04em;
+    color: var(--ink-2);
+    background: var(--surface-sunk);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: 9px 14px 10px;
+    cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; gap: 5px;
+    transition: background .12s ease, border-color .12s ease, color .12s ease;
+  }
+  .seg .ticks { display: flex; align-items: flex-end; gap: 2px; height: 9px; }
+  .seg .ticks i { display: block; width: 1px; background: currentColor; opacity: .5; height: 100%; }
+  .seg:hover { border-color: var(--accent-line); color: var(--ink); }
+  .seg[aria-pressed="true"] {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .seg[aria-pressed="true"] .ticks i { opacity: 1; }
+
+  /* ---- Today's entry ---- */
+  .today-grid { display: flex; flex-direction: column; gap: 18px; }
+  .reading { display: flex; align-items: flex-end; gap: 14px; flex-wrap: wrap; }
+  .reading-value {
+    font-family: var(--mono);
+    font-size: clamp(44px, 9vw, 68px);
+    font-weight: 600;
+    line-height: .9;
+    letter-spacing: -.03em;
+    font-variant-numeric: tabular-nums;
+    color: var(--accent);
+  }
+  .reading-of { font-family: var(--mono); font-size: 13px; color: var(--ink-3); padding-bottom: 8px; letter-spacing: .04em; }
+  .reading-word { font-size: 14px; color: var(--ink-2); padding-bottom: 7px; margin-left: auto; text-align: right; }
+
+  .steps { display: flex; flex-wrap: wrap; gap: 5px; }
+  .step {
+    appearance: none;
+    min-width: 44px;
+    flex: 1 1 44px;
+    font: 500 14px/1 var(--mono);
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-2);
+    background: var(--surface-sunk);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: 11px 4px;
+    cursor: pointer;
+    transition: background .12s ease, border-color .12s ease, color .12s ease, transform .12s ease;
+  }
+  .step:hover { border-color: var(--accent-line); color: var(--ink); }
+  .step[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+
+  .slider-row { display: flex; align-items: center; gap: 14px; }
+  input[type="range"] {
+    flex: 1;
+    appearance: none;
+    height: 22px;
+    background: transparent;
+    cursor: pointer;
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 4px; border-radius: 2px;
+    background: linear-gradient(to right, var(--accent) var(--pct, 50%), var(--line) var(--pct, 50%));
+  }
+  input[type="range"]::-moz-range-track { height: 4px; border-radius: 2px; background: var(--line); }
+  input[type="range"]::-moz-range-progress { height: 4px; border-radius: 2px; background: var(--accent); }
+  input[type="range"]::-webkit-slider-thumb {
+    appearance: none; width: 16px; height: 16px; border-radius: 50%;
+    background: var(--accent); border: 2px solid var(--surface); margin-top: -6px;
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--accent); border: 2px solid var(--surface); box-shadow: 0 0 0 1px var(--accent);
+  }
+  .slider-end { font-family: var(--mono); font-size: 11px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+
+  .anchors { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+
+  .field-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .field { display: flex; flex-direction: column; gap: 6px; flex: 1 1 220px; }
+  .field label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--ink-3);
+  }
+  input[type="text"], input[type="date"], select, textarea {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--surface-sunk);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: 9px 10px;
+    width: 100%;
+  }
+  textarea { resize: vertical; min-height: 40px; }
+  input:focus-visible, select:focus-visible, textarea:focus-visible,
+  button:focus-visible, a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .btn {
+    appearance: none;
+    font: 500 13px/1 var(--mono);
+    letter-spacing: .06em;
+    padding: 11px 18px;
+    border-radius: var(--r);
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: var(--on-accent);
+    cursor: pointer;
+    transition: filter .12s ease;
+  }
+  .btn:hover { filter: brightness(1.06); }
+  .btn.ghost { background: transparent; color: var(--ink-2); border-color: var(--line); }
+  .btn.ghost:hover { border-color: var(--accent-line); color: var(--ink); }
+  .btn.quiet { background: transparent; border-color: transparent; color: var(--ink-3); padding: 8px 10px; }
+  .btn.quiet:hover { color: var(--danger); }
+  .saved-flag { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: .06em; opacity: 0; transition: opacity .2s ease; }
+  .saved-flag.on { opacity: 1; }
+
+  /* ---- Stat tiles ---- */
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+  .tile { background: var(--surface); padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+  .tile-label { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+  .tile-value { font-family: var(--mono); font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+  .tile-sub { font-size: 12px; color: var(--ink-3); }
+
+  /* ---- Chart ---- */
+  .chart-wrap { position: relative; width: 100%; overflow-x: auto; }
+  svg.chart { display: block; width: 100%; height: 220px; touch-action: none; }
+  .tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    box-shadow: var(--shadow);
+    padding: 8px 10px;
+    font-size: 12px;
+    color: var(--ink-2);
+    min-width: 120px;
+    opacity: 0;
+    transition: opacity .1s ease;
+    z-index: 3;
+  }
+  .tooltip.on { opacity: 1; }
+  .tooltip .tt-date { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+  .tooltip .tt-val { font-family: var(--mono); font-size: 17px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .tooltip .tt-note { margin-top: 3px; color: var(--ink-2); }
+
+  /* ---- Entry log ---- */
+  .log { display: flex; flex-direction: column; gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); border-radius: var(--r); overflow: hidden; }
+  .row { display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: var(--surface); }
+  .row-date { font-family: var(--mono); font-size: 12px; color: var(--ink-3); width: 74px; flex: none; font-variant-numeric: tabular-nums; }
+  .chip {
+    font-family: var(--mono); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums;
+    padding: 3px 0; border-radius: var(--r); width: 52px; text-align: center; flex: none;
+  }
+  .row-note { flex: 1; font-size: 13px; color: var(--ink-2); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .row-tag { font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); border: 1px solid var(--line); border-radius: var(--r); padding: 2px 6px; flex: none; }
+  .row-scale { font-family: var(--mono); font-size: 10px; color: var(--ink-3); flex: none; }
+  .more { background: var(--surface); width: 100%; padding: 11px; border-radius: 0; }
+  .more:hover { color: var(--accent); }
+  .empty { padding: 24px; text-align: center; color: var(--ink-3); font-size: 13px; }
+
+  footer { color: var(--ink-3); font-size: 12px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+  @media (max-width: 560px) {
+    .row-tag, .row-scale { display: none; }
+    .panel { padding: 16px; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="eyebrow"><span class="dot"></span> Prototype · rating-scale pass · <span id="stamp"></span></div>
+    <h1>Happiness Gauge</h1>
+    <p class="lede">A daily wellbeing log where the rating scale is a setting, not a decision you're stuck with. Every entry is stored as a position between the floor and the ceiling of whatever scale it was taken on — so re-graduating the gauge re-reads the whole history instead of throwing it away.</p>
+  </header>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2 class="panel-title">Rating scale</h2>
+      <span class="panel-aside" id="scale-aside"></span>
+    </div>
+    <div class="segmented" id="scale-control" role="group" aria-label="Rating scale"></div>
+    <p class="note" id="scale-note"></p>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2 class="panel-title">Today's reading</h2>
+      <span class="panel-aside" id="today-date"></span>
+    </div>
+
+    <div class="today-grid">
+      <div class="reading">
+        <span class="reading-value" id="reading-value">—</span>
+        <span class="reading-of" id="reading-of"></span>
+        <span class="reading-word" id="reading-word">Pick a point on the scale</span>
+      </div>
+
+      <div id="input-mount"></div>
+      <div class="anchors"><span id="anchor-low">Low</span><span id="anchor-high">High</span></div>
+
+      <div class="field-row">
+        <div class="field" style="flex: 2 1 300px;">
+          <label for="note-input">What moved it</label>
+          <textarea id="note-input" rows="1" placeholder="Closed on the Oviedo listing"></textarea>
+        </div>
+        <div class="field">
+          <label for="tag-input">Where (optional)</label>
+          <select id="tag-input"></select>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn" id="save-btn">Save reading</button>
+        <span class="saved-flag" id="saved-flag">Saved</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="tiles" id="tiles"></div>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2 class="panel-title">Last 30 days</h2>
+      <span class="panel-aside" id="chart-aside"></span>
+    </div>
+    <div class="chart-wrap" id="chart-wrap">
+      <svg class="chart" id="chart" role="img" aria-label="Daily happiness readings over the last 30 days"></svg>
+      <div class="tooltip" id="tooltip"></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2 class="panel-title">Log</h2>
+      <span class="panel-aside" id="log-aside"></span>
+    </div>
+    <div class="log" id="log"></div>
+    <div class="actions">
+      <button class="btn ghost" id="export-btn">Export JSON</button>
+      <button class="btn ghost" id="seed-btn">Load sample month</button>
+      <button class="btn quiet" id="clear-btn">Clear all entries</button>
+    </div>
+  </section>
+
+  <footer>Stored locally in your browser only — nothing leaves this page.</footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---------------------------------------------------------------- scales
+  // Every scale declares its own floor and ceiling. A reading is persisted as
+  // `pos` — a 0..1 position between them — plus the scale it was taken on, so
+  // switching scales is a re-read of the same data, never a rewrite.
+  var SCALES = [
+    { id: "5",   min: 1, max: 5,   step: 1, label: "1–5",   ticks: 5,  kind: "steps",  blurb: "Five points. Fast, but the middle swallows a lot of nuance." },
+    { id: "7",   min: 1, max: 7,   step: 1, label: "1–7",   ticks: 7,  kind: "steps",  blurb: "Seven points. A true middle, plus room on either side of it." },
+    { id: "10",  min: 1, max: 10,  step: 1, label: "1–10",  ticks: 10, kind: "steps",  blurb: "Ten points. No exact center, so you're pushed to pick a side." },
+    { id: "100", min: 0, max: 100, step: 1, label: "0–100", ticks: 11, kind: "slider", blurb: "A hundred points on a slider. Highest resolution, lowest repeatability day to day." }
+  ];
+  var WORDS = ["Rough", "Low", "Flat", "Steady", "Good", "Strong", "Excellent"];
+
+  var COMMUNITIES = ["lake-nona","windermere","winter-park","dr-phillips","lake-conway","oviedo","lake-mary",
+                     "winter-garden","avalon-park","hunters-creek","sanford","altamonte-springs","apopka","clermont"];
+
+  var STORE_KEY = "happiness-gauge.v1";
+
+  // ------------------------------------------------------------- state I/O
+  var state = { scaleId: "10", entries: [], draft: null, showAll: false };
+
+  function scale() {
+    for (var i = 0; i < SCALES.length; i++) if (SCALES[i].id === state.scaleId) return SCALES[i];
+    return SCALES[2];
+  }
+  function toPos(value, s) { return (value - s.min) / (s.max - s.min); }
+  function toValue(pos, s) { return s.min + pos * (s.max - s.min); }
+  function display(pos, s) { return Math.round(toValue(pos, s) / s.step) * s.step; }
+  function wordFor(pos) { return WORDS[Math.min(WORDS.length - 1, Math.max(0, Math.round(pos * (WORDS.length - 1))))]; }
+
+  function load() {
+    try {
+      var raw = localStorage.getItem(STORE_KEY);
+      if (!raw) return false;
+      var parsed = JSON.parse(raw);
+      if (!parsed || !Array.isArray(parsed.entries)) return false;
+      state.scaleId = parsed.scaleId || state.scaleId;
+      state.entries = parsed.entries;
+      return true;
+    } catch (e) { return false; }
+  }
+  function save() {
+    try {
+      localStorage.setItem(STORE_KEY, JSON.stringify({ scaleId: state.scaleId, entries: state.entries }));
+    } catch (e) { /* private mode — the page still works for this session */ }
+  }
+
+  function isoDay(d) {
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  }
+  function today() { return isoDay(new Date()); }
+  function shortDate(iso) {
+    var p = iso.split("-");
+    return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString(undefined, { month: "short", day: "numeric" });
+  }
+  function entryFor(day) {
+    for (var i = 0; i < state.entries.length; i++) if (state.entries[i].date === day) return state.entries[i];
+    return null;
+  }
+  function sorted() { return state.entries.slice().sort(function (a, b) { return a.date < b.date ? -1 : 1; }); }
+
+  // ------------------------------------------------------------ sample data
+  // Deterministic so the demo looks the same every time it's loaded.
+  function seed() {
+    var notes = [
+      "Two showings, both no-shows", "Listing photos came back sharp", "Long inspection day",
+      "Signed the Windermere buyers", "Slow — caught up on CRM", "Open house had real traffic",
+      "Financing fell through", "Beach afternoon with the family", "Back-to-back closings",
+      "Paperwork all day", "Referral came in cold from the newsletter", "Rained out the Oviedo tour"
+    ];
+    var out = [], base = new Date(), rnd = 7;
+    for (var i = 29; i >= 0; i--) {
+      rnd = (rnd * 1103515245 + 12345) % 2147483648;
+      var jitter = (rnd / 2147483648 - 0.5) * 0.34;
+      var wave = 0.58 + 0.20 * Math.sin((29 - i) / 4.4);
+      var pos = Math.min(1, Math.max(0, wave + jitter));
+      if (i % 7 === 2) continue; // a realistic log has gaps
+      var d = new Date(base.getFullYear(), base.getMonth(), base.getDate() - i);
+      out.push({
+        date: isoDay(d),
+        pos: Math.round(pos * 1000) / 1000,
+        scaleId: "10",
+        note: (rnd % 3 === 0) ? notes[(29 - i) % notes.length] : "",
+        tag: (rnd % 4 === 0) ? COMMUNITIES[(29 - i) % COMMUNITIES.length] : ""
+      });
+    }
+    return out;
+  }
+
+  // ------------------------------------------------------------------- DOM
+  var $ = function (id) { return document.getElementById(id); };
+  var scaleControl = $("scale-control"), scaleNote = $("scale-note"), scaleAside = $("scale-aside");
+  var readingValue = $("reading-value"), readingOf = $("reading-of"), readingWord = $("reading-word");
+  var inputMount = $("input-mount"), anchorLow = $("anchor-low"), anchorHigh = $("anchor-high");
+  var noteInput = $("note-input"), tagInput = $("tag-input"), savedFlag = $("saved-flag");
+  var tiles = $("tiles"), log = $("log"), logAside = $("log-aside"), chartAside = $("chart-aside");
+  var chart = $("chart"), chartWrap = $("chart-wrap"), tooltip = $("tooltip");
+
+  function titleCase(slug) {
+    return slug.split("-").map(function (w) { return w.charAt(0).toUpperCase() + w.slice(1); }).join(" ");
+  }
+
+  // ------------------------------------------------------- scale control UI
+  function renderScaleControl() {
+    scaleControl.textContent = "";
+    SCALES.forEach(function (s) {
+      var b = document.createElement("button");
+      b.className = "seg";
+      b.type = "button";
+      b.setAttribute("aria-pressed", String(s.id === state.scaleId));
+
+      var ticks = document.createElement("span");
+      ticks.className = "ticks";
+      var n = s.kind === "slider" ? 11 : s.ticks;
+      for (var i = 0; i < n; i++) {
+        var t = document.createElement("i");
+        t.style.height = (i === 0 || i === n - 1) ? "100%" : (i % 2 ? "45%" : "70%");
+        ticks.appendChild(t);
+      }
+      b.appendChild(ticks);
+      b.appendChild(document.createTextNode(s.label));
+      b.addEventListener("click", function () {
+        if (state.scaleId === s.id) return;
+        state.scaleId = s.id;
+        save();
+        renderAll();
+      });
+      scaleControl.appendChild(b);
+    });
+
+    var s = scale();
+    scaleAside.textContent = s.max === 100 ? "101 positions" : s.ticks + " positions";
+    var recorded = {};
+    state.entries.forEach(function (e) { recorded[e.scaleId] = (recorded[e.scaleId] || 0) + 1; });
+    var mixed = Object.keys(recorded).filter(function (k) { return k !== state.scaleId; });
+    scaleNote.innerHTML = s.blurb +
+      " <strong>Readings keep their exact position</strong> — " +
+      (mixed.length
+        ? mixed.length + " other scale" + (mixed.length > 1 ? "s are" : " is") + " represented in the log, shown here converted, not rounded in storage."
+        : "switch scales as often as you like and the underlying values are untouched.");
+  }
+
+  // -------------------------------------------------------- reading input UI
+  function setDraft(pos) {
+    state.draft = Math.min(1, Math.max(0, pos));
+    paintReading();
+  }
+
+  function paintReading() {
+    var s = scale();
+    if (state.draft === null) {
+      readingValue.textContent = "—";
+      readingOf.textContent = "";
+      readingWord.textContent = "Pick a point on the scale";
+    } else {
+      readingValue.textContent = display(state.draft, s);
+      readingOf.textContent = "/ " + s.max;
+      readingWord.textContent = wordFor(state.draft);
+    }
+    var steps = inputMount.querySelectorAll(".step");
+    for (var i = 0; i < steps.length; i++) {
+      var v = +steps[i].dataset.value;
+      steps[i].setAttribute("aria-pressed", String(state.draft !== null && display(state.draft, s) === v));
+    }
+    var range = inputMount.querySelector("input[type=range]");
+    if (range && state.draft !== null) {
+      range.value = display(state.draft, s);
+      range.style.setProperty("--pct", ((range.value - s.min) / (s.max - s.min) * 100) + "%");
+    }
+  }
+
+  function renderInput() {
+    var s = scale();
+    inputMount.textContent = "";
+    inputMount.style.width = "100%";
+
+    if (s.kind === "steps") {
+      var wrap = document.createElement("div");
+      wrap.className = "steps";
+      for (var v = s.min; v <= s.max; v += s.step) {
+        (function (v) {
+          var b = document.createElement("button");
+          b.className = "step";
+          b.type = "button";
+          b.dataset.value = v;
+          b.textContent = v;
+          b.setAttribute("aria-label", "Rate " + v + " out of " + s.max);
+          b.addEventListener("click", function () { setDraft(toPos(v, s)); });
+          wrap.appendChild(b);
+        })(v);
+      }
+      inputMount.appendChild(wrap);
+    } else {
+      var row = document.createElement("div");
+      row.className = "slider-row";
+      var lo = document.createElement("span"); lo.className = "slider-end"; lo.textContent = s.min;
+      var hi = document.createElement("span"); hi.className = "slider-end"; hi.textContent = s.max;
+      var range = document.createElement("input");
+      range.type = "range"; range.min = s.min; range.max = s.max; range.step = s.step;
+      range.value = state.draft === null ? Math.round((s.min + s.max) / 2) : display(state.draft, s);
+      range.setAttribute("aria-label", "Rate 0 to 100");
+      range.addEventListener("input", function () { setDraft(toPos(+range.value, s)); });
+      row.appendChild(lo); row.appendChild(range); row.appendChild(hi);
+      inputMount.appendChild(row);
+    }
+
+    anchorLow.textContent = "Worst day";
+    anchorHigh.textContent = "Best day";
+    paintReading();
+  }
+
+  // ------------------------------------------------------------------ tiles
+  function mean(list) {
+    if (!list.length) return null;
+    var sum = 0;
+    for (var i = 0; i < list.length; i++) sum += list[i].pos;
+    return sum / list.length;
+  }
+  function lastNDays(n) {
+    var cutoff = new Date();
+    cutoff.setDate(cutoff.getDate() - (n - 1));
+    var key = isoDay(cutoff);
+    return sorted().filter(function (e) { return e.date >= key; });
+  }
+  function streak() {
+    var have = {};
+    state.entries.forEach(function (e) { have[e.date] = true; });
+    var d = new Date(), count = 0;
+    if (!have[isoDay(d)]) d.setDate(d.getDate() - 1); // today not logged yet doesn't break it
+    while (have[isoDay(d)]) { count++; d.setDate(d.getDate() - 1); }
+    return count;
+  }
+
+  function renderTiles() {
+    var s = scale();
+    var week = mean(lastNDays(7)), month = mean(lastNDays(30));
+    var all = sorted(), best = null;
+    all.forEach(function (e) { if (!best || e.pos > best.pos) best = e; });
+    var trend = (week !== null && month !== null) ? (week - month) : null;
+
+    var data = [
+      { label: "7-day average", value: week === null ? "—" : display(week, s), sub: week === null ? "no readings yet"
+        : (trend === null || Math.abs(trend) < 0.01 ? "level with the month"
+          : (trend > 0 ? "▲ " : "▼ ") + Math.abs(Math.round(trend * (s.max - s.min) * 10) / 10) + " vs. 30-day") },
+      { label: "30-day average", value: month === null ? "—" : display(month, s), sub: lastNDays(30).length + " readings logged" },
+      { label: "Best day", value: best ? display(best.pos, s) : "—", sub: best ? shortDate(best.date) : "—" },
+      { label: "Streak", value: streak(), sub: streak() === 1 ? "day in a row" : "days in a row" }
+    ];
+
+    tiles.textContent = "";
+    data.forEach(function (d) {
+      var t = document.createElement("div"); t.className = "tile";
+      var l = document.createElement("div"); l.className = "tile-label"; l.textContent = d.label;
+      var v = document.createElement("div"); v.className = "tile-value"; v.textContent = d.value;
+      var sb = document.createElement("div"); sb.className = "tile-sub"; sb.textContent = d.sub;
+      t.appendChild(l); t.appendChild(v); t.appendChild(sb);
+      tiles.appendChild(t);
+    });
+  }
+
+  // ------------------------------------------------------------------ chart
+  var SVG_NS = "http://www.w3.org/2000/svg";
+  function el(name, attrs) {
+    var n = document.createElementNS(SVG_NS, name);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    return n;
+  }
+
+  var chartPoints = [];
+
+  // Whole-number gridlines on an even stride (at most five intervals), so the
+  // axis re-graduates cleanly instead of landing on rounded thirds.
+  function gridValues(s) {
+    var span = s.max - s.min, stride = span;
+    var candidates = [1, 2, 5, 10, 20, 25, 50];
+    for (var i = 0; i < candidates.length; i++) {
+      if (span / candidates[i] <= 5) { stride = candidates[i]; break; }
+    }
+    var out = [];
+    for (var v = s.max; v >= s.min - 1e-9; v -= stride) out.push(v);
+    return out;
+  }
+
+  function renderChart() {
+    var s = scale();
+    var data = lastNDays(30);
+    chart.textContent = "";
+    chartPoints = [];
+    chartAside.textContent = data.length ? data.length + " readings · " + s.label : "no readings";
+
+    var W = chartWrap.clientWidth || 800, H = 220;
+    var pad = { t: 14, r: 40, b: 24, l: 8 };
+    chart.setAttribute("viewBox", "0 0 " + W + " " + H);
+
+    if (!data.length) {
+      var msg = el("text", { x: W / 2, y: H / 2, "text-anchor": "middle", fill: "var(--ink-3)", "font-size": "13", "font-family": "var(--sans)" });
+      msg.textContent = "Save a reading to start the trend line";
+      chart.appendChild(msg);
+      return;
+    }
+
+    var x0 = pad.l, x1 = W - pad.r, y0 = pad.t, y1 = H - pad.b;
+    var n = data.length;
+    var px = function (i) { return n === 1 ? (x0 + x1) / 2 : x0 + (i / (n - 1)) * (x1 - x0); };
+    var py = function (pos) { return y1 - pos * (y1 - y0); };
+
+    // y grid, graduated in the *current* scale — this is what re-reads on switch
+    gridValues(s).forEach(function (v) {
+      var y = py(toPos(v, s));
+      chart.appendChild(el("line", { x1: x0, x2: x1, y1: y, y2: y, stroke: "var(--line-soft)", "stroke-width": 1 }));
+      var lbl = el("text", { x: x1 + 8, y: y + 4, fill: "var(--ink-3)", "font-size": "11", "font-family": "var(--mono)" });
+      lbl.textContent = v;
+      chart.appendChild(lbl);
+    });
+
+    // area + line
+    var dLine = "", dArea = "";
+    data.forEach(function (e, i) {
+      var X = px(i), Y = py(e.pos);
+      dLine += (i ? " L" : "M") + X + " " + Y;
+      chartPoints.push({ x: X, y: Y, e: e });
+    });
+    dArea = dLine + " L" + px(n - 1) + " " + y1 + " L" + px(0) + " " + y1 + " Z";
+
+    var grad = el("linearGradient", { id: "fill", x1: "0", y1: "0", x2: "0", y2: "1" });
+    grad.appendChild(el("stop", { offset: "0", "stop-color": "var(--fill-top)" }));
+    grad.appendChild(el("stop", { offset: "1", "stop-color": "var(--fill-bot)" }));
+    var defs = el("defs", {}); defs.appendChild(grad); chart.appendChild(defs);
+
+    chart.appendChild(el("path", { d: dArea, fill: "url(#fill)" }));
+    chart.appendChild(el("path", { d: dLine, fill: "none", stroke: "var(--accent)", "stroke-width": 2, "stroke-linejoin": "round", "stroke-linecap": "round" }));
+
+    // markers stay quiet; the endpoint is emphasized and labeled
+    chartPoints.forEach(function (p, i) {
+      if (i === chartPoints.length - 1) return;
+      chart.appendChild(el("circle", { cx: p.x, cy: p.y, r: 2.5, fill: "var(--accent)", opacity: .5 }));
+    });
+    var last = chartPoints[chartPoints.length - 1];
+    chart.appendChild(el("circle", { cx: last.x, cy: last.y, r: 5, fill: "var(--accent)", stroke: "var(--surface)", "stroke-width": 2 }));
+
+    // hover layer
+    var cross = el("line", { x1: 0, x2: 0, y1: y0, y2: y1, stroke: "var(--accent-line)", "stroke-width": 1, opacity: 0 });
+    var halo = el("circle", { r: 5, fill: "var(--accent)", stroke: "var(--surface)", "stroke-width": 2, opacity: 0 });
+    chart.appendChild(cross); chart.appendChild(halo);
+
+    function nearest(clientX) {
+      var box = chart.getBoundingClientRect();
+      var mx = (clientX - box.left) * (W / box.width);
+      var best = chartPoints[0], bestD = Infinity;
+      chartPoints.forEach(function (p) {
+        var d = Math.abs(p.x - mx);
+        if (d < bestD) { bestD = d; best = p; }
+      });
+      return best;
+    }
+    function show(evt) {
+      var p = nearest(evt.clientX);
+      cross.setAttribute("x1", p.x); cross.setAttribute("x2", p.x); cross.setAttribute("opacity", .8);
+      halo.setAttribute("cx", p.x); halo.setAttribute("cy", p.y); halo.setAttribute("opacity", 1);
+      tooltip.textContent = "";
+      var d1 = document.createElement("div"); d1.className = "tt-date"; d1.textContent = shortDate(p.e.date);
+      var d2 = document.createElement("div"); d2.className = "tt-val";
+      d2.textContent = display(p.e.pos, s) + " / " + s.max + "  " + wordFor(p.e.pos);
+      tooltip.appendChild(d1); tooltip.appendChild(d2);
+      if (p.e.note) { var d3 = document.createElement("div"); d3.className = "tt-note"; d3.textContent = p.e.note; tooltip.appendChild(d3); }
+      if (p.e.scaleId !== s.id) {
+        var d4 = document.createElement("div"); d4.className = "tt-date";
+        d4.textContent = "taken on " + p.e.scaleId + "-point";
+        tooltip.appendChild(d4);
+      }
+      tooltip.classList.add("on");
+      var scaleX = (chartWrap.clientWidth || W) / W;
+      var left = Math.min(Math.max(p.x * scaleX - 60, 0), (chartWrap.clientWidth || W) - tooltip.offsetWidth);
+      tooltip.style.left = left + "px";
+      tooltip.style.top = Math.max(0, p.y * (chart.clientHeight / H) - tooltip.offsetHeight - 12) + "px";
+    }
+    function hide() {
+      cross.setAttribute("opacity", 0);
+      halo.setAttribute("opacity", 0);
+      tooltip.classList.remove("on");
+    }
+    chart.addEventListener("mousemove", show);
+    chart.addEventListener("mouseleave", hide);
+    chart.addEventListener("touchmove", function (e) { if (e.touches[0]) show(e.touches[0]); }, { passive: true });
+    chart.addEventListener("touchend", hide);
+  }
+
+  // -------------------------------------------------------------------- log
+  function rampFor(pos) {
+    var i = Math.min(4, Math.max(0, Math.floor(pos * 5)));
+    return { bg: "var(--s" + (i + 1) + ")", fg: "var(--on-s" + (i + 1) + ")" };
+  }
+
+  function renderLog() {
+    var s = scale();
+    var rows = sorted().reverse();
+    log.textContent = "";
+    logAside.textContent = rows.length ? rows.length + " readings" : "";
+
+    if (!rows.length) {
+      var e = document.createElement("div");
+      e.className = "empty";
+      e.textContent = "No readings yet. Save one above, or load the sample month.";
+      log.appendChild(e);
+      return;
+    }
+
+    var LIMIT = 12;
+    var shown = state.showAll ? rows : rows.slice(0, LIMIT);
+    shown.forEach(function (entry) {
+      var row = document.createElement("div"); row.className = "row";
+      var d = document.createElement("span"); d.className = "row-date"; d.textContent = shortDate(entry.date);
+      var c = document.createElement("span"); c.className = "chip";
+      var ramp = rampFor(entry.pos);
+      c.style.background = ramp.bg; c.style.color = ramp.fg;
+      c.textContent = display(entry.pos, s);
+      var note = document.createElement("span"); note.className = "row-note";
+      note.textContent = entry.note || wordFor(entry.pos) + " day";
+      row.appendChild(d); row.appendChild(c); row.appendChild(note);
+      if (entry.tag) {
+        var t = document.createElement("span"); t.className = "row-tag"; t.textContent = titleCase(entry.tag);
+        row.appendChild(t);
+      }
+      if (entry.scaleId !== s.id) {
+        var sc = document.createElement("span"); sc.className = "row-scale";
+        sc.textContent = "was " + entry.scaleId + "-pt";
+        row.appendChild(sc);
+      }
+      log.appendChild(row);
+    });
+
+    if (rows.length > LIMIT) {
+      var more = document.createElement("button");
+      more.className = "btn quiet more";
+      more.type = "button";
+      more.textContent = state.showAll ? "Show recent only" : "Show all " + rows.length + " readings";
+      more.addEventListener("click", function () { state.showAll = !state.showAll; renderLog(); });
+      log.appendChild(more);
+    }
+  }
+
+  // ------------------------------------------------------------------ wiring
+  function renderAll() {
+    renderScaleControl();
+    renderInput();
+    renderTiles();
+    renderChart();
+    renderLog();
+  }
+
+  $("save-btn").addEventListener("click", function () {
+    if (state.draft === null) { readingWord.textContent = "Pick a point first"; return; }
+    var day = today(), existing = entryFor(day);
+    var payload = {
+      date: day,
+      pos: Math.round(state.draft * 1000) / 1000,
+      scaleId: state.scaleId,
+      note: noteInput.value.trim(),
+      tag: tagInput.value
+    };
+    if (existing) { state.entries[state.entries.indexOf(existing)] = payload; }
+    else { state.entries.push(payload); }
+    save();
+    renderAll();
+    savedFlag.classList.add("on");
+    setTimeout(function () { savedFlag.classList.remove("on"); }, 1600);
+  });
+
+  $("export-btn").addEventListener("click", function () {
+    var out = { scaleId: state.scaleId, exportedAt: new Date().toISOString(), entries: sorted() };
+    var w = window.open("", "_blank");
+    if (w) {
+      w.document.write("<pre style='font:13px ui-monospace,monospace;padding:16px;white-space:pre-wrap'>" +
+        JSON.stringify(out, null, 2).replace(/[&<>]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]; }) + "</pre>");
+      w.document.close();
+    }
+  });
+
+  $("seed-btn").addEventListener("click", function () {
+    state.entries = seed();
+    save();
+    renderAll();
+  });
+
+  $("clear-btn").addEventListener("click", function () {
+    state.entries = [];
+    save();
+    renderAll();
+  });
+
+  noteInput.addEventListener("input", function () {
+    noteInput.style.height = "auto";
+    noteInput.style.height = Math.min(120, noteInput.scrollHeight) + "px";
+  });
+
+  var resizeTimer;
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(renderChart, 120);
+  });
+
+  // ------------------------------------------------------------------- boot
+  (function boot() {
+    var opt = document.createElement("option"); opt.value = ""; opt.textContent = "—";
+    tagInput.appendChild(opt);
+    COMMUNITIES.forEach(function (c) {
+      var o = document.createElement("option"); o.value = c; o.textContent = titleCase(c);
+      tagInput.appendChild(o);
+    });
+
+    $("stamp").textContent = new Date().toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+    $("today-date").textContent = new Date().toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" });
+
+    if (!load()) { state.entries = seed(); save(); }
+
+    var mine = entryFor(today());
+    if (mine) {
+      state.draft = mine.pos;
+      noteInput.value = mine.note || "";
+      tagInput.value = mine.tag || "";
+    }
+    renderAll();
+  })();
+})();
+</script>
