@@ -13,40 +13,54 @@ The app guesses which book a passage belongs in and shows the guess before
 saving. One tap changes it. A calendar puts a ✓ on every day he writes, with a
 running "days in a row" count.
 
-Everything is stored on the device itself. There is no account, no server, and
-nothing is uploaded.
+Everything is stored on the device itself. There is no account and no server.
+Nothing is uploaded unless the person switches on Google Drive saving, which is
+off by default and puts the documents in their own Drive.
 
-## Getting it onto his device
+## Where it lives
 
-The app is five ordinary files. It needs to be served over `https://` once —
-after that it works with no internet.
+The app is published from this repository to:
 
-### Option A — GitHub Pages (recommended, free)
+**https://perceptshun.github.io/florida-relocation-events-data/**
 
-1. In this repository on github.com: **Settings → Pages**.
-2. Under *Build and deployment*, set **Source** to `Deploy from a branch`,
-   pick the branch holding this folder, and set the folder to `/ (root)`.
-3. Wait a minute, then open `https://<user>.github.io/<repo>/memoir/` on his
-   device.
-4. **Install it** so it gets its own icon and opens like a normal app:
-   - **Android / Chrome:** menu (⋮) → *Add to Home screen* → *Install*
-   - **iPhone / iPad, Safari:** Share button → *Add to Home Screen*
-   - **Windows / Mac, Chrome or Edge:** the install icon (⊕ or a screen icon)
-     at the right end of the address bar
-5. Open it once from the new icon while online. From then on it opens offline.
+That link is all anyone needs. Send it to whoever wants to try it — each person
+gets their own private copy of the writing, held in their own browser. Nobody
+can see anybody else's.
 
-### Option B — straight off a computer
+### Turning publishing on (once)
 
-Any static file server works, as long as it is `https://` or `localhost`:
+`.github/workflows/deploy-memoir.yml` does the publishing, but GitHub needs to be
+told to listen to it:
+
+1. **Settings → Pages**
+2. Under *Build and deployment*, set **Source** to **GitHub Actions**
+3. Merge this branch into `main`
+
+The workflow then runs on every push that touches `memoir/`, and republishes in
+about a minute. Only the `memoir/` folder is uploaded — the events data in the
+rest of this repository is not part of the published site.
+
+### Installing it so it works offline
+
+Opening the link works straight away, but installing it gives it a real icon and
+lets it run with no internet:
+
+- **Android / Chrome:** menu (⋮) → *Add to Home screen* → *Install*
+- **iPhone / iPad, Safari:** Share button → *Add to Home Screen*
+- **Windows / Mac, Chrome or Edge:** the install icon at the right end of the
+  address bar
+
+Open it once from the new icon while online. After that it opens offline.
+
+### Running it on your own machine
 
 ```bash
 cd memoir
-python3 -m http.server 8000
-# then open http://localhost:8000
+python3 -m http.server 8000     # then open http://localhost:8000
 ```
 
 Opening `index.html` by double-clicking (a `file://` address) mostly works, but
-the browser will not allow the offline installer, so use one of the options above.
+the browser will not allow the offline installer, so use a server.
 
 ## Setting it up for him
 
@@ -59,6 +73,48 @@ Do these once, before handing the device over:
   It remembers.
 - Put the icon on the first home screen, by itself if possible.
 - Print `PRINT-THIS-GUIDE.html` and leave it next to the device.
+
+## Saving into Google Drive
+
+Switched **off** until somebody turns it on. When it is on, each of the three
+books is kept as a Google Doc in a **My Life Stories** folder in that person's
+own Drive, rewritten a few seconds after anything changes. They own the
+documents outright — share, print, or edit them like anything else in Drive.
+
+It asks for the `drive.file` scope, which is the narrowest Google offers: the
+app can only touch files it created itself, and can see nothing else in the
+Drive. Turning it off stops further updates and leaves the existing documents
+untouched. If Drive is unreachable the writing is still saved on the device and
+the upload is retried when the connection comes back.
+
+### Switching it on for everyone who uses your copy
+
+Drive saving needs a Google OAuth client id. It is free and takes about five
+minutes:
+
+1. [console.cloud.google.com](https://console.cloud.google.com) → create a project
+2. **APIs & Services → Library** → enable **Google Drive API**
+3. **APIs & Services → OAuth consent screen** → *External*. While the app is
+   unpublished, add each person who will use it under **Test users** (up to 100).
+4. **Credentials → Create credentials → OAuth client ID → Web application**
+5. Under **Authorised JavaScript origins** add the origin only, no path:
+   `https://perceptshun.github.io`
+6. Paste the client id into `googleClientId` in `memoir/config.js` and push.
+
+Anyone can also paste their own client id into **Help → Save to Google Drive →
+Use my own Google set-up**, without touching the code. That is the quickest way
+for a tester to try it against their own Google project.
+
+Leave `googleClientId` empty and the app works exactly as it does now, with
+everything kept on the device and the Drive panel explaining that it has not
+been set up.
+
+### A note on the privacy wording
+
+With Drive saving off, the app tells the user their words never leave the
+device. With it on, that sentence changes to say a copy goes to their own
+Drive. Please keep that behaviour if you edit the text — it is the one claim
+the app makes about their writing, and it should stay true.
 
 ## Backups — please do not skip this
 
@@ -98,6 +154,8 @@ browser's own recogniser is faster and far simpler to keep working.
 |---|---|
 | `index.html` | the four screens |
 | `app.js` | dictation, sorting, streak, backups |
+| `drive.js` | the optional Google Drive saving |
+| `config.js` | the Google client id for this copy — **edit this one** |
 | `styles.css` | large-type, high-contrast layout |
 | `sw.js` | the offline cache — **bump `CACHE` after any edit** |
 | `manifest.webmanifest` | makes it installable |

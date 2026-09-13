@@ -121,11 +121,42 @@
     </div>
   </div>
 
+  <div class="card" id="driveCard">
+    <h2>Save to Google Drive</h2>
+    <p class="note" id="driveBlurb">
+      Off. Your writing stays on this device only.
+    </p>
+    <p class="note" id="driveStatus" role="status" aria-live="polite"></p>
+
+    <div class="row" id="driveOffRow">
+      <button class="quiet" id="driveConnect">☁️ Turn On Drive Saving</button>
+    </div>
+
+    <div class="row hide" id="driveOnRow">
+      <button class="quiet" id="driveOpen">📄 Open My Documents</button>
+      <button class="quiet" id="driveDisconnect">Turn Drive Saving Off</button>
+    </div>
+
+    <details id="driveSetup" style="margin-top:14px">
+      <summary class="note" style="cursor:pointer;padding:8px 0">Use my own Google set-up</summary>
+      <p class="note">
+        Paste a Google OAuth client id to point this app at your own Google project.
+        The README explains how to make one — it takes about five minutes and is free.
+      </p>
+      <input type="text" id="driveClientId" placeholder="1234-abcd.apps.googleusercontent.com"
+             style="width:100%;font:inherit;font-size:.8em;padding:12px;border:3px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)">
+      <div class="row" style="margin-top:10px">
+        <button class="quiet" id="driveSaveId">Save This Client ID</button>
+      </div>
+    </details>
+  </div>
+
   <div class="card">
     <h2>Keep your writing safe</h2>
     <p class="note">
-      Everything is stored on this device and nowhere else. Make a backup once in a while
-      and email it to someone you trust, or keep it on a memory stick.
+      Your writing lives in this browser's storage. If the browsing data is ever cleared
+      it goes with it, so make a backup now and then — email it to someone you trust,
+      or keep it on a memory stick.
     </p>
     <div class="row">
       <button class="quiet" id="backupBtn">💾 Make a Backup</button>
@@ -138,7 +169,7 @@
     <h2>About</h2>
     <p class="note">
       My Life Stories works without internet once it has been opened one time.
-      Your words never leave this device — there is no account and nothing is uploaded.
+      <span id="privacyNote"></span>
       <span id="engineNote"></span>
     </p>
   </div>
@@ -153,6 +184,8 @@
   <button data-view="help"><span class="ico" aria-hidden="true">❓</span>Help</button>
 </nav>
 
+<script src="config.js"></script>
+<script src="drive.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

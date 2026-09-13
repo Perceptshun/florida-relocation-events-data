@@ -42,9 +42,117 @@ const FAKE_SR = `
   window.speechSynthesis = { speak(){}, cancel(){} };
 `;
 
+
+// ---- a stand-in for Google, so the Drive path can be tested offline -------
+const FAKE_GOOGLE = `
+  window.__drive = { creates: [], updates: [], folders: 0 };
+  window.google = { accounts: { oauth2: {
+    initTokenClient(opts) {
+      const c = { requestAccessToken() {
+        setTimeout(() => c.callback({ access_token: 'fake-token', expires_in: 3600 }), 5);
+      }, callback: null, error_callback: null };
+      return c;
+    },
+    revoke() {}
+  }}};
+  const realFetch = window.fetch;
+  window.fetch = function (url, opts) {
+    url = String(url); opts = opts || {};
+    const json = (o) => Promise.resolve(new Response(JSON.stringify(o),
+      { status: 200, headers: { 'Content-Type': 'application/json' } }));
+    if (url.indexOf('googleapis.com') === -1) return realFetch(url, opts);
+
+    if (url.indexOf('/upload/drive/v3/files/') === 0 || /\\/upload\\/drive\\/v3\\/files\\/[^?]+\\?uploadType=media/.test(url)) {
+      window.__drive.updates.push({ url, body: opts.body });
+      return json({ id: 'doc' });
+    }
+    if (url.indexOf('uploadType=multipart') !== -1) {
+      const n = 'doc' + (window.__drive.creates.length + 1);
+      window.__drive.creates.push({ body: opts.body, id: n });
+      return json({ id: n });
+    }
+    if (opts.method === 'POST') { window.__drive.folders++; return json({ id: 'folder1' }); }
+    if (/files\\/[A-Za-z0-9_-]+\\?fields=id,trashed/.test(url)) return json({ id: 'x', trashed: false });
+    return json({ files: [] });   // the "does a folder already exist" search
+  };
+`;
+
+async function driveChecks(browser, origin) {
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  const page = await ctx.newPage();
+  page.on('dialog', d => d.accept());
+  page.on('pageerror', e => { console.log('DRIVE PAGE ERROR:', e.message); fail++; });
+  await page.addInitScript(FAKE_SR);
+  await page.addInitScript(FAKE_GOOGLE);
+  // Seed a client id the way the in-app settings field would, plus one passage.
+  await page.addInitScript(() => {
+    localStorage.setItem('mls.v1', JSON.stringify({
+      entries: [{ id: 'seed1', ts: Date.now(), cat: 'self', text: 'I was born in a cold winter.' }],
+      settings: { scale: 1, theme: 'day', speak: false },
+      drive: { on: false, clientId: 'test.apps.googleusercontent.com', folderId: null, docs: {}, lastSync: 0 }
+    }));
+  });
+
+  await page.goto(origin + '/index.html');
+  await page.click('nav.bottom button[data-view="help"]');
+  await page.waitForTimeout(200);
+
+  check('Drive starts switched off',
+        await page.textContent('#driveBlurb'), /^Off\./, true);
+  check('privacy line promises nothing is uploaded while Drive is off',
+        /nothing is uploaded/.test(await page.textContent('#privacyNote')), 'true');
+
+  await page.click('#driveConnect');
+  await page.waitForTimeout(1200);
+
+  const d = await page.evaluate(() => window.__drive);
+  check('a Drive folder is made', d.folders, 1);
+  check('one document per book is made', d.creates.length, 3);
+  check('the document carries his writing',
+        /I was born in a cold winter\./.test(d.creates.map(c => c.body).join('\n')), 'true');
+  check('the document is created as a Google Doc',
+        /application\/vnd\.google-apps\.document/.test(d.creates[0].body), 'true');
+  check('privacy line now admits a copy goes to Drive',
+        /goes to\s+your own Drive/.test(await page.textContent('#privacyNote')), 'true');
+
+  // A new passage should update the existing document rather than make another.
+  await page.click('nav.bottom button[data-view="talk"]');
+  await page.click('#talkBtn');
+  await page.evaluate(() => window.__say('and my mother sang to me every night'));
+  await page.click('#talkBtn');
+  await page.click('#saveBtn');
+  await page.waitForTimeout(3400);
+
+  const d2 = await page.evaluate(() => window.__drive);
+  check('no second set of documents is made', d2.creates.length, 3);
+  check('the existing document is rewritten', d2.updates.length >= 1, 'true');
+  check('the rewrite contains the new passage',
+        /sang to me every night/.test(d2.updates.map(u => u.body).join('\n')), 'true');
+
+  // Turning it off must stop sending, and must not touch what is already there.
+  await page.click('nav.bottom button[data-view="help"]');
+  await page.click('#driveDisconnect');
+  await page.waitForTimeout(200);
+  const before = (await page.evaluate(() => window.__drive)).updates.length;
+  await page.click('nav.bottom button[data-view="talk"]');
+  await page.click('#talkBtn');
+  await page.evaluate(() => window.__say('this one should stay here on the device'));
+  await page.click('#talkBtn');
+  await page.click('#saveBtn');
+  await page.waitForTimeout(3400);
+  check('nothing more is sent once Drive saving is turned off',
+        (await page.evaluate(() => window.__drive)).updates.length, before);
+
+  await page.screenshot({ path: '/tmp/shot-drive.png' });
+  await page.click('nav.bottom button[data-view="help"]');
+  await page.waitForTimeout(200);
+  await page.screenshot({ path: '/tmp/shot-help.png', fullPage: true });
+  await ctx.close();
+}
+
 let pass = 0, fail = 0;
-function check(name, got, want) {
-  const ok = String(got) === String(want);
+function check(name, got, want, isRegex) {
+  const ok = isRegex ? want.test(String(got)) : String(got) === String(want);
   ok ? pass++ : fail++;
   console.log(`${ok ? 'PASS' : 'FAIL'}  ${name}`);
   if (!ok) console.log(`        wanted: ${JSON.stringify(want)}\n        got:    ${JSON.stringify(got)}`);
@@ -168,6 +276,8 @@ function check(name, got, want) {
   await page.click('nav.bottom button[data-view="streak"]');
   await page.waitForTimeout(150);
   await page.screenshot({ path: '/tmp/shot-streak.png' });
+
+  await driveChecks(browser, 'http://localhost:8099');
 
   await browser.close();
   server.close();

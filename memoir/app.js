@@ -32,7 +32,8 @@ function load() {
   } catch (e) {
     console.warn('Could not read saved work:', e);
   }
-  return { entries: [], settings: { scale: 1, theme: 'day', speak: true } };
+  return { entries: [], settings: { scale: 1, theme: 'day', speak: true },
+           drive: { on: false, clientId: '', folderId: null, docs: {}, lastSync: 0 } };
 }
 
 function normalize(d) {
@@ -40,6 +41,7 @@ function normalize(d) {
   if (typeof d.settings.scale !== 'number') d.settings.scale = 1;
   if (!d.settings.theme) d.settings.theme = 'day';
   if (typeof d.settings.speak !== 'boolean') d.settings.speak = true;
+  d.drive = d.drive || { on: false, clientId: '', folderId: null, docs: {}, lastSync: 0 };
   d.entries.forEach(function (e) { if (!CATS[e.cat]) e.cat = 'self'; });
   return d;
 }
@@ -376,6 +378,7 @@ saveBtn.addEventListener('click', function () {
   setStatus('Saved in “' + CATS[cat].book + '”. ' + streakSentence());
   speak('Saved in ' + CATS[cat].book + '.');
   refreshStreak();
+  driveChanged(cat);
 });
 
 clearBtn.addEventListener('click', function () {
@@ -471,6 +474,7 @@ function entryCard(entry) {
     save();
     renderEntries();
     refreshStreak();
+    driveChanged(entry.cat);
   }));
 
   card.appendChild(tools);
@@ -494,10 +498,13 @@ function openMoveRow(card, entry) {
   Object.keys(CATS).forEach(function (cat) {
     if (cat === entry.cat) return;
     row.appendChild(button(CATS[cat].icon + ' ' + CATS[cat].book, function () {
+      var from = entry.cat;
       entry.cat = cat;
       save();
       renderEntries();
       refreshStreak();
+      driveChanged(from);
+      driveChanged(cat);
     }));
   });
 
@@ -526,6 +533,7 @@ function startEdit(card, body, tools, entry) {
     entry.text = ta.value.trim() || entry.text;
     save();
     renderEntries();
+    driveChanged(entry.cat);
   }));
   bar.appendChild(button('✗ Cancel', function () { renderEntries(); }));
   card.appendChild(bar);
@@ -740,6 +748,7 @@ $('#restoreFile').addEventListener('change', function (ev) {
     save();
     renderEntries();
     refreshStreak();
+    Object.keys(CATS).forEach(driveChanged);
     alert(added
       ? 'Restored ' + added + ' piece' + (added === 1 ? '' : 's') + ' of writing.'
       : 'That backup was already here — nothing new to add.');
@@ -747,6 +756,95 @@ $('#restoreFile').addEventListener('change', function (ev) {
   reader.readAsText(file);
   ev.target.value = '';
 });
+
+/* --------------------------------------------------------------------------
+   10b. Google Drive
+   Optional, and off until somebody turns it on. Each book becomes a Google
+   Doc in their own Drive, rewritten a few seconds after anything changes,
+   so they can share or print it however they like.
+   -------------------------------------------------------------------------- */
+
+var driveOn = typeof MLSDrive !== 'undefined';
+
+function driveChanged(cat) {
+  if (driveOn) MLSDrive.markDirty(cat);
+}
+
+function paintDrive() {
+  if (!driveOn) return;
+  var card = $('#driveCard');
+  if (!card) return;
+
+  var configured = MLSDrive.isConfigured();
+  var on = MLSDrive.isOn();
+  var st = MLSDrive.getStatus();
+
+  $('#driveOffRow').classList.toggle('hide', on);
+  $('#driveOnRow').classList.toggle('hide', !on);
+  $('#driveConnect').disabled = !configured;
+
+  $('#driveBlurb').textContent = on
+    ? 'On. Each of your three books is kept as a document in your own Google Drive, ' +
+      'updated a few seconds after you write something. You own those documents — ' +
+      'share, print or edit them however you like.'
+    : configured
+      ? 'Off. Your writing stays on this device only. Turn this on to keep a copy ' +
+        'of each book as a document in your own Google Drive.'
+      : 'This copy of the app has not been set up with Google yet. Open ' +
+        '“Use my own Google set-up” below, or ask whoever shared it with you.';
+
+  var when = db.drive.lastSync
+    ? ' Last saved to Drive ' + new Date(db.drive.lastSync).toLocaleString() + '.'
+    : '';
+  $('#driveStatus').textContent = on ? (st.detail || 'Connected.') + when : (st.detail || '');
+
+  $('#driveOpen').disabled = !MLSDrive.folderLink();
+  updatePrivacyNote();
+}
+
+function initDrive() {
+  if (!driveOn) return;
+
+  MLSDrive.init({
+    catKeys: Object.keys(CATS),
+    getBookText: function (cat) { return bookText(cat); },
+    getBookName: function (cat) { return CATS[cat].book; },
+    getState: function () { return db.drive; },
+    saveState: function (state) { db.drive = state; save(); },
+    onStatus: function () { paintDrive(); }
+  });
+
+  $('#driveConnect').addEventListener('click', function () {
+    if (!confirm('This sends your writing to your own Google Drive so you can keep ' +
+                 'and share it as documents.\n\nNothing is sent anywhere else. ' +
+                 'You can turn this off again at any time.\n\nCarry on?')) return;
+    MLSDrive.connect(Object.keys(CATS)).then(paintDrive).catch(paintDrive);
+  });
+
+  $('#driveDisconnect').addEventListener('click', function () {
+    if (!confirm('Stop saving to Google Drive?\n\nThe documents already in your Drive ' +
+                 'stay exactly where they are — they simply stop being updated.')) return;
+    MLSDrive.disconnect();
+    paintDrive();
+  });
+
+  $('#driveOpen').addEventListener('click', function () {
+    var link = MLSDrive.folderLink();
+    if (link) window.open(link, '_blank', 'noopener');
+  });
+
+  $('#driveClientId').value = db.drive.clientId || '';
+  $('#driveSaveId').addEventListener('click', function () {
+    db.drive.clientId = $('#driveClientId').value.trim();
+    save();
+    alert(db.drive.clientId
+      ? 'Saved. Now tap “Turn On Drive Saving”.'
+      : 'Cleared. Drive saving is switched off.');
+    location.reload();
+  });
+
+  paintDrive();
+}
 
 /* --------------------------------------------------------------------------
    11. Moving between pages
@@ -776,6 +874,17 @@ $$('nav.bottom button').forEach(function (b) {
    12. Start up
    -------------------------------------------------------------------------- */
 
+/** The privacy line has to follow the truth: once Drive saving is on, "nothing
+    is uploaded" is no longer true, so the wording changes with it. */
+function updatePrivacyNote() {
+  var el = $('#privacyNote');
+  if (!el) return;
+  el.textContent = (driveOn && MLSDrive.isOn())
+    ? 'You have switched on saving to Google Drive, so a copy of each book goes to ' +
+      'your own Drive. Nothing goes anywhere else, and there is still no account here.'
+    : 'Your words never leave this device — there is no account and nothing is uploaded.';
+}
+
 function updateEngineNote() {
   var note = $('#engineNote');
   if (!note) return;
@@ -791,6 +900,8 @@ function boot() {
   renderLive();
   refreshStreak();
   updateEngineNote();
+  updatePrivacyNote();
+  initDrive();
 
   if (!SR) {
     talkBtn.disabled = true;

@@ -1,12 +1,14 @@
 /* Offline support. Bump CACHE when any of the files below change, otherwise
    installed copies keep serving the old version. */
-var CACHE = 'my-life-stories-v1';
+var CACHE = 'my-life-stories-v2';
 
 var SHELL = [
   './',
   './index.html',
   './styles.css',
   './app.js',
+  './drive.js',
+  './config.js',
   './manifest.webmanifest',
   './icon-192.png',
   './icon-512.png'

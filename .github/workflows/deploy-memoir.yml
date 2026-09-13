@@ -1,0 +1,53 @@
+# Publishes the My Life Stories app to GitHub Pages.
+#
+# Only the memoir/ folder is uploaded, so the rest of this repository — the
+# events data — is not part of the published site.
+#
+# One-time set-up: Settings → Pages → Build and deployment → Source →
+# "GitHub Actions". After that every push to main republishes the app.
+
+name: Deploy My Life Stories
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'memoir/**'
+      - '.github/workflows/deploy-memoir.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish; queue at most one more behind it.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check the app files parse
+        run: |
+          for f in memoir/app.js memoir/drive.js memoir/sw.js memoir/config.js; do
+            node --check "$f"
+          done
+          node -e "JSON.parse(require('fs').readFileSync('memoir/manifest.webmanifest','utf8'))"
+
+      - uses: actions/configure-pages@v5
+
+      - name: Upload the app
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: memoir
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
