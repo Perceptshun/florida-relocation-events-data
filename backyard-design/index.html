@@ -1,0 +1,695 @@
+<title>Fall Farm Backyard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#E9E2D4; --surface:#F5F0E5; --sunk:#DED4C1;
+  --ink:#2A211A; --ink-2:#5D5246; --ink-3:#8A7C6B;
+  --line:#C9BCA6; --line-soft:#D8CDB9;
+  --rust:#A6432A; --gold:#B07C18; --olive:#5F6E3C; --iron:#3A3730;
+
+  --p-paver:#C08A62; --p-paver-line:#9C6B47;
+  --p-dg:#CBA65C; --p-rock:#B3A187; --p-mulch:#6E4C31;
+  --p-house:#E4DCCD; --p-house-line:#B3A48C;
+  --p-fence:#FBFAF7; --p-fence-line:#A79A85;
+  --p-plant:#6E8046; --p-tree:#55682F; --p-counter:#413C36;
+  --p-slab:#D5CEC0;
+  --shadow:0 1px 2px rgba(42,33,26,.06), 0 8px 22px -14px rgba(42,33,26,.35);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#1D1814; --surface:#272018; --sunk:#332A20;
+    --ink:#EFE6D6; --ink-2:#BDB09B; --ink-3:#8C8170;
+    --line:#463B2E; --line-soft:#3A3126;
+    --rust:#DD7148; --gold:#DFA83E; --olive:#9BAA6A; --iron:#BCB7AD;
+
+    --p-paver:#A9744F; --p-paver-line:#C79067;
+    --p-dg:#A08442; --p-rock:#877560; --p-mulch:#4A3221;
+    --p-house:#2F2820; --p-house-line:#584B3B;
+    --p-fence:#D9D3C6; --p-fence-line:#8F8674;
+    --p-plant:#6C7C44; --p-tree:#4C5F2D; --p-counter:#8B847A;
+    --p-slab:#39312A;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 24px -16px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#1D1814; --surface:#272018; --sunk:#332A20;
+  --ink:#EFE6D6; --ink-2:#BDB09B; --ink-3:#8C8170;
+  --line:#463B2E; --line-soft:#3A3126;
+  --rust:#DD7148; --gold:#DFA83E; --olive:#9BAA6A; --iron:#BCB7AD;
+  --p-paver:#A9744F; --p-paver-line:#C79067;
+  --p-dg:#A08442; --p-rock:#877560; --p-mulch:#4A3221;
+  --p-house:#2F2820; --p-house-line:#584B3B;
+  --p-fence:#D9D3C6; --p-fence-line:#8F8674;
+  --p-plant:#6C7C44; --p-tree:#4C5F2D; --p-counter:#8B847A;
+  --p-slab:#39312A;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 24px -16px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--ground); color:var(--ink);
+  font-family:"Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.62; margin:0;
+  padding-inline:20px; padding-block:0;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1020px; margin:0 auto; padding-block:0 72px}
+img{max-width:100%}
+a{color:var(--rust)}
+
+/* ---------- type ---------- */
+h1,h2,h3,h4{font-family:"Zilla Slab",Georgia,serif; text-wrap:balance; margin:0; line-height:1.12}
+h1{font-size:clamp(2.4rem,7vw,3.9rem); font-weight:700; letter-spacing:-.015em}
+h2{font-size:clamp(1.55rem,4vw,2.1rem); font-weight:600; letter-spacing:-.01em}
+h3{font-size:1.22rem; font-weight:600}
+h4{font-size:1.02rem; font-weight:600}
+p{margin:0}
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:.72rem;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3);
+}
+.lede{font-size:1.14rem; color:var(--ink-2); max-width:64ch}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums}
+.small{font-size:.92rem; color:var(--ink-2)}
+
+/* ---------- rhythm ---------- */
+section{padding-block:54px; border-top:1px solid var(--line-soft)}
+.sechead{display:flex; flex-direction:column; gap:10px; margin-bottom:30px}
+.sechead .eyebrow{display:flex; align-items:center; gap:10px}
+.sechead .eyebrow::after{content:""; flex:1; height:1px; background:var(--line-soft)}
+
+/* ---------- masthead ---------- */
+header{padding-block:56px 44px}
+.mast-top{display:flex; flex-wrap:wrap; gap:12px 22px; align-items:baseline; margin-bottom:22px}
+.mast-top .eyebrow{color:var(--rust)}
+h1 em{font-style:normal; color:var(--rust)}
+.mast-lede{margin-top:20px}
+.stats{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:1px; background:var(--line-soft); border:1px solid var(--line-soft);
+  margin-top:34px;
+}
+.stat{background:var(--ground); padding:16px 18px}
+.stat .k{font-family:"Zilla Slab",Georgia,serif; font-size:1.6rem; font-weight:700; display:block; line-height:1.1}
+.stat .l{font-family:"IBM Plex Mono",monospace; font-size:.68rem; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3)}
+
+/* ---------- plan drawing ---------- */
+.planwrap{background:var(--surface); border:1px solid var(--line); padding:14px}
+.planscroll{overflow-x:auto}
+svg.plan{display:block; width:100%; min-width:620px; height:auto}
+.plan text{font-family:"IBM Plex Mono",monospace; fill:var(--ink)}
+.zone-label{font-size:15px; font-weight:500; letter-spacing:.1em; fill:var(--ink-2)}
+.tick{font-size:11px; fill:var(--ink-3)}
+.numtxt{font-size:14px; font-weight:500; fill:var(--surface)}
+
+.legend{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:10px 26px; margin-top:26px}
+.leg{display:flex; gap:11px; align-items:flex-start; font-size:.95rem}
+.leg b{
+  flex:none; width:21px; height:21px; border-radius:50%; background:var(--iron); color:var(--ground);
+  font-family:"IBM Plex Mono",monospace; font-size:.72rem; font-weight:500;
+  display:grid; place-items:center; margin-top:2px;
+}
+.leg span{color:var(--ink-2)}
+.leg span i{font-style:normal; color:var(--ink); font-weight:600}
+
+.matkey{display:flex; flex-wrap:wrap; gap:8px 20px; margin-top:24px; padding-top:20px; border-top:1px dashed var(--line)}
+.matkey div{display:flex; align-items:center; gap:8px; font-family:"IBM Plex Mono",monospace; font-size:.74rem; letter-spacing:.05em; color:var(--ink-2)}
+.sw{width:16px; height:16px; border:1px solid var(--line)}
+
+/* ---------- zones ---------- */
+.zone{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); gap:30px 36px; align-items:start; margin-bottom:52px}
+.zone:last-child{margin-bottom:0}
+.zone figure{margin:0}
+.zone figure img{display:block; width:100%; aspect-ratio:3/4; object-fit:cover; border:1px solid var(--line); background:var(--sunk)}
+.zone figcaption{font-family:"IBM Plex Mono",monospace; font-size:.7rem; letter-spacing:.11em; text-transform:uppercase; color:var(--ink-3); margin-top:9px}
+.zbody{display:flex; flex-direction:column; gap:16px}
+.ztag{display:inline-flex; align-items:center; gap:9px; font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--rust)}
+.ztag::before{content:""; width:22px; height:2px; background:var(--rust)}
+.moves{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px}
+.moves li{padding-left:20px; position:relative; color:var(--ink-2); font-size:.98rem}
+.moves li::before{content:""; position:absolute; left:0; top:.62em; width:7px; height:7px; background:var(--olive)}
+.moves li b{color:var(--ink); font-weight:600}
+
+/* ---------- spec / takeoff rows ---------- */
+.spec{display:flex; flex-direction:column; gap:0; margin:0; padding:0; list-style:none}
+.spec li{display:flex; align-items:baseline; gap:8px; padding:7px 0; border-bottom:1px solid var(--line-soft); font-size:.95rem}
+.spec li:last-child{border-bottom:none}
+.spec .d{flex:1; border-bottom:1px dotted var(--line); transform:translateY(-4px); min-width:14px}
+.spec .v{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; font-size:.9rem; color:var(--ink); flex:none}
+.spec .n{color:var(--ink-2)}
+.spec li.tot{border-top:2px solid var(--ink); border-bottom:none; margin-top:6px; padding-top:11px}
+.spec li.tot .n, .spec li.tot .v{font-weight:600; color:var(--ink); font-size:1rem}
+
+.panel{background:var(--surface); border:1px solid var(--line); padding:24px 26px; box-shadow:var(--shadow)}
+.split{display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:26px; align-items:start}
+
+/* ---------- palette board ---------- */
+.palette{display:grid; grid-template-columns:repeat(auto-fit,minmax(158px,1fr)); gap:16px}
+.chip{border:1px solid var(--line); background:var(--surface)}
+.chip .cap{height:76px; border-bottom:1px solid var(--line)}
+.chip .txt{padding:11px 13px 13px}
+.chip .txt b{display:block; font-family:"Zilla Slab",serif; font-size:1rem; font-weight:600; line-height:1.25}
+.chip .txt span{display:block; font-family:"IBM Plex Mono",monospace; font-size:.7rem; color:var(--ink-3); margin-top:4px; line-height:1.45}
+
+/* ---------- tables ---------- */
+.tscroll{overflow-x:auto; border:1px solid var(--line)}
+table{border-collapse:collapse; width:100%; min-width:540px; background:var(--surface); font-size:.93rem}
+th,td{text-align:left; padding:11px 14px; border-bottom:1px solid var(--line-soft); vertical-align:top}
+thead th{
+  font-family:"IBM Plex Mono",monospace; font-size:.68rem; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ink-3); background:var(--sunk); border-bottom:1px solid var(--line); white-space:nowrap;
+}
+td.num, th.num{text-align:right; font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+tr.total td{border-top:2px solid var(--ink); background:var(--sunk); font-weight:600; color:var(--ink)}
+td b{font-weight:600}
+.rec{color:var(--rust)}
+caption{caption-side:bottom; text-align:left; padding:11px 14px; font-size:.85rem; color:var(--ink-3); background:var(--surface); border-top:1px solid var(--line-soft)}
+
+/* ---------- sequence ---------- */
+.seq{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:1px; background:var(--line-soft); border:1px solid var(--line-soft)}
+.step{background:var(--surface); padding:20px}
+.step .wk{font-family:"IBM Plex Mono",monospace; font-size:.68rem; letter-spacing:.13em; text-transform:uppercase; color:var(--rust)}
+.step h4{margin:7px 0 9px}
+.step ul{margin:0; padding-left:17px; color:var(--ink-2); font-size:.92rem; display:flex; flex-direction:column; gap:5px}
+
+/* ---------- notes ---------- */
+.notes{display:flex; flex-direction:column; gap:0}
+.note{display:grid; grid-template-columns:auto 1fr; gap:0 18px; padding:16px 0; border-bottom:1px solid var(--line-soft)}
+.note:last-child{border-bottom:none}
+.note .hd{font-family:"IBM Plex Mono",monospace; font-size:.7rem; letter-spacing:.11em; text-transform:uppercase; color:var(--gold); padding-top:4px; white-space:nowrap}
+.note p{color:var(--ink-2); font-size:.96rem}
+@media (max-width:560px){ .note{grid-template-columns:1fr; gap:6px} }
+
+.callout{border-left:3px solid var(--rust); padding:4px 0 4px 20px; margin:0}
+.callout p{color:var(--ink-2)}
+.callout p + p{margin-top:10px}
+
+footer{padding-block:36px 0; border-top:1px solid var(--line-soft); color:var(--ink-3); font-size:.88rem}
+
+@media (max-width:720px){
+  .zone{grid-template-columns:1fr; gap:20px}
+  .zone figure img{aspect-ratio:4/3}
+  body{font-size:16px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .leg b, .step{transition:none}
+}
+</style>
+
+<div class="wrap">
+
+<header>
+  <div class="mast-top">
+    <span class="eyebrow">Site plan &amp; build guide</span>
+    <span class="eyebrow">Central Florida · Zone 9b</span>
+    <span class="eyebrow">≈ 52' × 32' rear yard</span>
+  </div>
+  <h1>A no-grass backyard in <em>harvest</em> colors.</h1>
+  <p class="lede mast-lede">Three rooms, no lawn, nothing to mow. A fire pit lounge under the fruit tree on the left, a paver terrace in the middle where your table already sits, and a block-and-slab outdoor kitchen wrapping the back-right corner — placed so it is the thing you see when you look out the dining room window. Terracotta pavers, gold crushed granite, brown bark and river rock do the work that grass was failing at.</p>
+
+  <div class="stats">
+    <div class="stat"><span class="k mono">0</span><span class="l">Sq ft of turf</span></div>
+    <div class="stat"><span class="k mono">3</span><span class="l">Outdoor rooms</span></div>
+    <div class="stat"><span class="k mono">$4,110</span><span class="l">DIY materials, mid tier</span></div>
+    <div class="stat"><span class="k mono">4</span><span class="l">Weekends</span></div>
+    <div class="stat"><span class="k mono">978</span><span class="l">Kitchen build, dollars</span></div>
+  </div>
+</header>
+
+<section>
+  <div class="sechead">
+    <span class="eyebrow">01 — The plan</span>
+    <h2>Everything laid out from above</h2>
+    <p class="lede">Drawn from your three photos, looking down with the house along the bottom and the back fence at the top. The dashed fans mark where each photo was taken from.</p>
+  </div>
+
+  <div class="planwrap">
+   <div class="planscroll">
+    <svg class="plan" viewBox="0 0 960 660" role="img" aria-label="Overhead site plan of the backyard showing a fire pit lounge at left under the existing fruit tree, a paver terrace in the center, and an L-shaped outdoor kitchen along the back and right fence.">
+
+      <!-- ============ base ground ============ -->
+      <rect x="0" y="0" width="960" height="660" fill="var(--surface)"/>
+
+      <!-- yard soil base -->
+      <path d="M24 24 H936 V520 H300 V400 H24 Z" fill="var(--p-mulch)" opacity=".16"/>
+
+      <!-- ============ mulch beds ============ -->
+      <path d="M32 32 H540 V104 H32 Z" fill="var(--p-mulch)" opacity=".55"/>
+      <path d="M32 104 V392 H132 V104 Z" fill="var(--p-mulch)" opacity=".55"/>
+      <path d="M330 300 H392 V500 H330 Z" fill="var(--p-mulch)" opacity=".38"/>
+
+      <!-- ============ fire pit lounge: crushed granite circle ============ -->
+      <circle cx="196" cy="256" r="128" fill="var(--p-dg)" opacity=".72"/>
+      <circle cx="196" cy="256" r="128" fill="none" stroke="var(--p-paver-line)" stroke-width="2" stroke-dasharray="5 4"/>
+
+      <!-- mulch ring at tree -->
+      <circle cx="158" cy="138" r="52" fill="var(--p-mulch)" opacity=".8"/>
+
+      <!-- fire pit -->
+      <circle cx="196" cy="256" r="30" fill="var(--p-paver)" stroke="var(--p-paver-line)" stroke-width="2.5"/>
+      <circle cx="196" cy="256" r="17" fill="var(--rust)" opacity=".55"/>
+      <!-- 4 chairs -->
+      <g fill="var(--p-counter)">
+        <rect x="181" y="164" width="30" height="17" rx="3"/>
+        <rect x="181" y="331" width="30" height="17" rx="3"/>
+        <rect x="104" y="247" width="17" height="30" rx="3"/>
+        <rect x="271" y="247" width="17" height="30" rx="3"/>
+      </g>
+
+      <!-- ============ tree (existing) ============ -->
+      <circle cx="158" cy="138" r="88" fill="var(--p-tree)" opacity=".5"/>
+      <circle cx="158" cy="138" r="88" fill="none" stroke="var(--p-tree)" stroke-width="2"/>
+      <circle cx="158" cy="138" r="9" fill="var(--p-tree)"/>
+
+      <!-- ============ terrace pavers ============ -->
+      <path d="M392 296 H828 V496 H392 Z" fill="var(--p-paver)" opacity=".9"/>
+      <g stroke="var(--p-paver-line)" stroke-width="1" opacity=".55">
+        <path d="M392 336 H828 M392 376 H828 M392 416 H828 M392 456 H828"/>
+        <path d="M432 296 V496 M472 296 V496 M512 296 V496 M552 296 V496 M592 296 V496 M632 296 V496 M672 296 V496 M712 296 V496 M752 296 V496 M792 296 V496"/>
+      </g>
+      <path d="M392 296 H828 V496 H392 Z" fill="none" stroke="var(--p-paver-line)" stroke-width="2.5"/>
+      <!-- existing slab outline -->
+      <rect x="640" y="380" width="188" height="116" fill="none" stroke="var(--ink-3)" stroke-width="2" stroke-dasharray="7 5"/>
+      <text class="tick" x="650" y="400">EXISTING SLAB — KEEP</text>
+
+      <!-- ============ crushed granite path ============ -->
+      <path d="M392 396 C 350 396 332 344 324 300 C 316 258 324 230 324 230" fill="none" stroke="var(--p-dg)" stroke-width="44" stroke-linecap="round" opacity=".85"/>
+      <path d="M700 296 V232" fill="none" stroke="var(--p-dg)" stroke-width="52" stroke-linecap="round" opacity=".85"/>
+
+      <!-- ============ kitchen apron pavers ============ -->
+      <path d="M560 72 H896 V248 H560 Z" fill="var(--p-paver)" opacity=".62"/>
+      <g stroke="var(--p-paver-line)" stroke-width="1" opacity=".4">
+        <path d="M560 112 H896 M560 152 H896 M560 192 H896"/>
+        <path d="M600 72 V248 M640 72 V248 M680 72 V248 M720 72 V248 M760 72 V248 M800 72 V248 M840 72 V248"/>
+      </g>
+
+      <!-- ============ river rock drip strip + spark apron ============ -->
+      <path d="M300 496 H936 V520 H300 Z" fill="var(--p-rock)"/>
+      <path d="M276 400 H300 V520 H276 Z" fill="var(--p-rock)"/>
+      <!-- door landing -->
+      <rect x="660" y="496" width="84" height="24" fill="var(--p-paver)" stroke="var(--p-paver-line)" stroke-width="1.5"/>
+
+      <!-- ============ outdoor kitchen counter (L) ============ -->
+      <!-- heat shield behind grill bay -->
+      <rect x="684" y="26" width="120" height="8" fill="var(--gold)"/>
+      <!-- back run -->
+      <rect x="560" y="36" width="336" height="40" fill="var(--p-counter)"/>
+      <!-- side run -->
+      <rect x="856" y="76" width="40" height="180" fill="var(--p-counter)"/>
+      <!-- grill bay -->
+      <rect x="690" y="40" width="108" height="32" fill="var(--rust)"/>
+      <!-- butcher block prep -->
+      <rect x="806" y="40" width="90" height="32" fill="var(--gold)" opacity=".85"/>
+      <!-- bar overhang -->
+      <rect x="842" y="96" width="14" height="140" fill="var(--gold)" opacity=".85"/>
+      <!-- stools -->
+      <g fill="var(--p-counter)">
+        <circle cx="816" cy="118" r="13"/><circle cx="816" cy="166" r="13"/><circle cx="816" cy="214" r="13"/>
+      </g>
+      <!-- sink -->
+      <rect x="600" y="44" width="44" height="24" fill="var(--p-rock)" stroke="var(--p-counter)" stroke-width="2"/>
+
+      <!-- ============ plantings ============ -->
+      <g fill="var(--p-plant)">
+        <!-- bird of paradise (existing) back center -->
+        <circle cx="452" cy="66" r="26"/><circle cx="496" cy="60" r="18"/>
+        <!-- muhly grass row -->
+        <circle cx="196" cy="66" r="16"/><circle cx="240" cy="70" r="16"/><circle cx="284" cy="64" r="16"/>
+        <circle cx="328" cy="70" r="16"/><circle cx="372" cy="64" r="16"/>
+        <!-- firebush left fence -->
+        <circle cx="66" cy="196" r="20"/><circle cx="66" cy="256" r="20"/><circle cx="66" cy="316" r="20"/>
+        <!-- croton at kitchen corner -->
+        <circle cx="916" cy="290" r="16"/><circle cx="890" cy="286" r="13"/>
+        <!-- coontie along house -->
+        <circle cx="360" cy="508" r="10"/><circle cx="420" cy="508" r="10"/><circle cx="480" cy="508" r="10"/>
+        <circle cx="540" cy="508" r="10"/><circle cx="880" cy="508" r="10"/>
+      </g>
+
+      <!-- ============ fence ============ -->
+      <g stroke="var(--p-fence-line)" stroke-width="3" fill="none">
+        <path d="M24 24 H936 V520"/>
+        <path d="M24 24 V400 H300"/>
+      </g>
+      <g stroke="var(--p-fence)" stroke-width="7" fill="none" opacity=".85">
+        <path d="M24 24 H936 V520"/>
+        <path d="M24 24 V400 H300"/>
+      </g>
+      <g stroke="var(--p-fence-line)" stroke-width="1.5" fill="none">
+        <path d="M24 24 H936 V520"/>
+        <path d="M24 24 V400 H300"/>
+      </g>
+
+      <!-- ============ house ============ -->
+      <path d="M300 520 H960 V660 H0 V400 H300 Z" fill="var(--p-house)" stroke="var(--p-house-line)" stroke-width="3"/>
+      <g stroke="var(--p-house-line)" stroke-width="1.5" opacity=".7">
+        <path d="M0 560 H960"/>
+      </g>
+      <!-- back door -->
+      <rect x="668" y="512" width="68" height="16" fill="var(--rust)"/>
+      <text class="tick" x="668" y="548">BACK DOOR</text>
+      <!-- dining window -->
+      <rect x="792" y="512" width="96" height="16" fill="var(--gold)"/>
+      <text class="tick" x="778" y="548">DINING WINDOW</text>
+      <!-- hose bib -->
+      <circle cx="920" cy="516" r="7" fill="var(--olive)"/>
+      <text class="tick" x="866" y="584">HOSE BIB + GFCI</text>
+      <text class="zone-label" x="40" y="616">H O U S E</text>
+
+      <!-- ============ sightline from dining window ============ -->
+      <g stroke="var(--gold)" stroke-width="2" stroke-dasharray="9 7" fill="none" opacity=".95">
+        <path d="M840 512 L 600 84"/>
+        <path d="M840 512 L 896 250"/>
+      </g>
+      <path d="M840 512 L 600 84 L 896 250 Z" fill="var(--gold)" opacity=".08"/>
+
+      <!-- ============ photo view fans ============ -->
+      <g stroke="var(--ink-3)" stroke-width="1.5" stroke-dasharray="4 5" fill="none" opacity=".8">
+        <path d="M712 470 L 260 372"/>
+        <path d="M712 470 L 520 120"/>
+        <path d="M712 470 L 912 300"/>
+      </g>
+      <g fill="var(--ink-3)" font-family="IBM Plex Mono, monospace" font-size="11">
+        <text x="268" y="364">PHOTO 1</text>
+        <text x="470" y="140">PHOTO 2</text>
+        <text x="856" y="322">PHOTO 3</text>
+      </g>
+
+      <!-- ============ zone labels ============ -->
+      <text class="zone-label" x="112" y="424">FIRE PIT LOUNGE</text>
+      <text class="zone-label" x="452" y="340">TERRACE</text>
+      <text class="zone-label" x="576" y="112">OUTDOOR KITCHEN</text>
+
+      <!-- ============ numbered callouts ============ -->
+      <g>
+        <circle cx="196" cy="322" r="14" fill="var(--iron)"/><text class="numtxt" x="196" y="327" text-anchor="middle">1</text>
+        <circle cx="158" cy="138" r="14" fill="var(--iron)"/><text class="numtxt" x="158" y="143" text-anchor="middle">2</text>
+        <circle cx="470" cy="440" r="14" fill="var(--iron)"/><text class="numtxt" x="470" y="445" text-anchor="middle">3</text>
+        <circle cx="604" cy="140" r="14" fill="var(--iron)"/><text class="numtxt" x="604" y="145" text-anchor="middle">4</text>
+        <circle cx="744" cy="100" r="14" fill="var(--iron)"/><text class="numtxt" x="744" y="105" text-anchor="middle">5</text>
+        <circle cx="790" cy="166" r="14" fill="var(--iron)"/><text class="numtxt" x="790" y="171" text-anchor="middle">6</text>
+        <circle cx="330" cy="262" r="14" fill="var(--iron)"/><text class="numtxt" x="330" y="267" text-anchor="middle">7</text>
+        <circle cx="268" cy="66" r="14" fill="var(--iron)"/><text class="numtxt" x="268" y="71" text-anchor="middle">8</text>
+        <circle cx="420" cy="508" r="14" fill="var(--iron)"/><text class="numtxt" x="420" y="513" text-anchor="middle">9</text>
+      </g>
+
+      <!-- ============ scale bar ============ -->
+      <g transform="translate(40,632)">
+        <rect x="0" y="0" width="40" height="7" fill="var(--ink)"/>
+        <rect x="40" y="0" width="40" height="7" fill="var(--surface)" stroke="var(--ink)" stroke-width="1"/>
+        <rect x="80" y="0" width="80" height="7" fill="var(--ink)"/>
+        <text class="tick" x="0" y="24">0</text>
+        <text class="tick" x="72" y="24">5</text>
+        <text class="tick" x="148" y="24">10 FT</text>
+      </g>
+    </svg>
+   </div>
+
+    <div class="legend">
+      <div class="leg"><b>1</b><span><i>Fire pit lounge.</i> 16' crushed-granite circle, 36" paver ring, four chairs</span></div>
+      <div class="leg"><b>2</b><span><i>Your fruit tree stays put.</i> 6' mulch ring, canopy shades the lounge all afternoon</span></div>
+      <div class="leg"><b>3</b><span><i>Terrace.</i> Tumbled pavers laid flush around the existing slab — no demo</span></div>
+      <div class="leg"><b>4</b><span><i>Outdoor kitchen.</i> L-counter, 22 linear feet, block base + slab top</span></div>
+      <div class="leg"><b>5</b><span><i>Grill bay.</i> Corrugated galvanized heat shield, 6" air gap off the vinyl</span></div>
+      <div class="leg"><b>6</b><span><i>Bar ledge.</i> 12" barnwood overhang, three stools facing the yard</span></div>
+      <div class="leg"><b>7</b><span><i>Crushed-granite paths.</i> 3'6" wide, terrace to lounge and terrace to kitchen</span></div>
+      <div class="leg"><b>8</b><span><i>Mulch planting beds.</i> Muhly grass, firebush, croton along the fence lines</span></div>
+      <div class="leg"><b>9</b><span><i>River rock drip strip.</i> 18" of rock against the block — the termite gap</span></div>
+    </div>
+
+    <div class="matkey">
+      <div><span class="sw" style="background:var(--p-paver)"></span>Tumbled paver</div>
+      <div><span class="sw" style="background:var(--p-dg)"></span>Crushed granite</div>
+      <div><span class="sw" style="background:var(--p-rock)"></span>River rock</div>
+      <div><span class="sw" style="background:var(--p-mulch)"></span>Bark mulch</div>
+      <div><span class="sw" style="background:var(--p-plant)"></span>Planting</div>
+      <div><span class="sw" style="background:var(--p-counter)"></span>Counter / furniture</div>
+      <div><span class="sw" style="background:var(--gold)"></span>Sightline from dining</div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:30px">
+    <p><b>The view test.</b> Stand at the dining window and the gold fan is what you get: the kitchen counter reads as a long horizontal line across the back-right, the corrugated shield catches late sun, and the junipers behind the fence become the backdrop instead of a bare fence panel. Nothing tall sits between the window and the counter, so the yard still reads deep.</p>
+    <p class="small" style="margin-top:12px">The plan is drawn from photos, not a survey — check the fence-to-house dimensions with a tape before ordering material, and tell me if the dining window is actually on the left wall instead and I'll flip the kitchen.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sechead">
+    <span class="eyebrow">02 — The three rooms</span>
+    <h2>What changes in each photo</h2>
+  </div>
+
+  <div class="zone">
+    <figure>
+      <img src="left.jpg" alt="Current left side of the yard: white block house wall, patchy dirt and grass, a fruit tree in the far corner against the white vinyl fence.">
+      <figcaption>Photo 1 — looking left</figcaption>
+    </figure>
+    <div class="zbody">
+      <span class="ztag">Room one · Fire pit lounge</span>
+      <h3>A gravel circle under the tree, and the tree never moves</h3>
+      <p>This leg is the shadiest part of the yard by mid-afternoon, which is exactly why the grass gave up here. Stop fighting it. A 16-foot circle of gold crushed granite, compacted and edged, sits partly under the canopy so the tree is doing the work an umbrella would.</p>
+      <ul class="moves">
+        <li><b>Fire pit</b> — three courses of trapezoid wall block dry-stacked into a 36" ring with a 30" steel insert and red lava rock. Roughly $155 and two hours.</li>
+        <li><b>Mulch ring</b> — 6' of brown bark around the trunk, pulled 4" back off the bark itself so you don't rot the collar.</li>
+        <li><b>Firebush</b> along the left fence — scarlet flowers, hummingbirds, and leaves that actually turn red here in November.</li>
+        <li><b>Keep the gravel strip</b> already running along the house; just top it up with matching river rock.</li>
+      </ul>
+      <ul class="spec">
+        <li><span class="n">Crushed granite, 3" deep over 200 sq ft</span><span class="d"></span><span class="v">2 tons</span></li>
+        <li><span class="n">Fire pit clearance to fence and trunk</span><span class="d"></span><span class="v">12 ft min</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="zone">
+    <figure>
+      <img src="middle.jpg" alt="Current center of the yard: existing concrete slab with a glass patio table and black metal chairs, bird of paradise plants at the back fence, tall junipers beyond.">
+      <figcaption>Photo 2 — looking straight back</figcaption>
+    </figure>
+    <div class="zbody">
+      <span class="ztag">Room two · Terrace</span>
+      <h3>Extend the slab you already have instead of breaking it</h3>
+      <p>Demo is the single most expensive thing you could do here and it buys nothing. The slab is sound and roughly level, so lay tumbled pavers on a compacted base right up to its edges, flush, with a soldier course framing the whole terrace. Read from the window it becomes one surface.</p>
+      <ul class="moves">
+        <li><b>Sierra / autumn blend tumbled pavers</b> in a running bond — the terracotta, tan and charcoal mix is the fall palette straight out of the pallet.</li>
+        <li><b>Keep the bird of paradise.</b> They're already the right backdrop; add five muhly grass in front so October gives you a pink haze at eye level.</li>
+        <li><b>Two crushed-granite paths</b> leave the terrace — one curving left to the fire circle, one running straight back to the kitchen.</li>
+        <li><b>Your existing black table and chairs stay.</b> Iron black is already in the palette; don't buy furniture.</li>
+      </ul>
+      <ul class="spec">
+        <li><span class="n">New paver area around the slab</span><span class="d"></span><span class="v">280 sq ft</span></li>
+        <li><span class="n">Base build-up under new pavers</span><span class="d"></span><span class="v">4" + 1" sand</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="zone">
+    <figure>
+      <img src="right.jpg" alt="Current right side of the yard: white vinyl fence turning a corner, the white block house wall with a window, a hose reel, and aloe in pots on the slab.">
+      <figcaption>Photo 3 — looking right</figcaption>
+    </figure>
+    <div class="zbody">
+      <span class="ztag">Room three · Outdoor kitchen</span>
+      <h3>The corner the dining room stares at</h3>
+      <p>Right now this corner is the weakest thing in the yard and it is the first thing the window sees. An L-shaped counter wrapping the back and right fence turns it into the focal point — and the hose bib and exterior outlet already on that wall mean you get water and power without a trench.</p>
+      <ul class="moves">
+        <li><b>Block-and-slab construction</b> — dry-stacked CMU set with masonry adhesive, no mortar joints, no footing inspection, no mason.</li>
+        <li><b>German-smear finish</b> over the block with a bag of mortar and a sponge, so the counter matches the white block house instead of fighting it.</li>
+        <li><b>Corrugated galvanized backsplash</b> behind the grill bay — a farm detail that happens to be the heat shield the vinyl fence needs.</li>
+        <li><b>Bar ledge with three stools</b> on the right run, facing back toward the fire pit so the two ends of the yard talk to each other.</li>
+      </ul>
+      <ul class="spec">
+        <li><span class="n">Counter run, back plus side</span><span class="d"></span><span class="v">22 lin ft</span></li>
+        <li><span class="n">Counter height / bar height</span><span class="d"></span><span class="v">36" / 42"</span></li>
+        <li><span class="n">Air gap, grill bay to vinyl fence</span><span class="d"></span><span class="v">6 in</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sechead">
+    <span class="eyebrow">03 — The kitchen</span>
+    <h2>Block and slab, under a thousand dollars</h2>
+    <p class="lede">No mortar, no footing, no contractor. Two courses of dry-stacked block, a slab top, and a finish that reads far more expensive than it is.</p>
+  </div>
+
+  <div class="split">
+    <div class="panel">
+      <span class="eyebrow">Shopping list</span>
+      <h3 style="margin:8px 0 16px">Materials takeoff</h3>
+      <ul class="spec">
+        <li><span class="n">8×8×16 CMU block ×64</span><span class="d"></span><span class="v">$145</span></li>
+        <li><span class="n">Masonry construction adhesive ×8</span><span class="d"></span><span class="v">$56</span></li>
+        <li><span class="n">Paver base + leveling sand ×6</span><span class="d"></span><span class="v">$42</span></li>
+        <li><span class="n">24×24 concrete counter slabs ×6</span><span class="d"></span><span class="v">$96</span></li>
+        <li><span class="n">2×10 PT bar top, 8 ft ×3</span><span class="d"></span><span class="v">$78</span></li>
+        <li><span class="n">Corrugated galvanized 3'×8' ×2</span><span class="d"></span><span class="v">$68</span></li>
+        <li><span class="n">2×4 furring, screws, washers</span><span class="d"></span><span class="v">$24</span></li>
+        <li><span class="n">Mortar for German smear ×2</span><span class="d"></span><span class="v">$28</span></li>
+        <li><span class="n">Bar sink, faucet, drain hose</span><span class="d"></span><span class="v">$115</span></li>
+        <li><span class="n">30" slide-in gas grill</span><span class="d"></span><span class="v">$280</span></li>
+        <li><span class="n">Exterior LED strip + weather cover</span><span class="d"></span><span class="v">$46</span></li>
+        <li class="tot"><span class="n">Total</span><span class="d"></span><span class="v">$978</span></li>
+      </ul>
+      <p class="small" style="margin-top:14px">Reuse a kettle grill instead of buying the slide-in and it lands at <span class="mono">$698</span>. Swap the concrete slabs for a granite remnant from a local fabricator and add roughly <span class="mono">$220</span>.</p>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:26px">
+      <div>
+        <span class="eyebrow">How it goes together</span>
+        <h3 style="margin:8px 0 14px">Five moves</h3>
+        <ul class="moves">
+          <li><b>Level a base.</b> 4" of compacted paver base under the whole counter footprint, screeded flat. This is the only step that matters — everything above it is forgiving.</li>
+          <li><b>Dry-stack two courses.</b> Block laid cores-down, each course glued to the one below with construction adhesive. Leave a 32" open bay for the grill and a 16" bay under the sink.</li>
+          <li><b>Cap it.</b> 24×24 slabs bedded in adhesive with a 1" overhang all around. On the right run, run the PT bar top 12" proud of the face for knees.</li>
+          <li><b>Smear it.</b> Wet the block, trowel on thinned mortar, wipe back with a damp sponge so block texture shows through. One afternoon, and it ties the counter to the house wall.</li>
+          <li><b>Shield and plumb.</b> Corrugated panel on 2×4 furring behind the grill bay, 6" off the fence. Bar sink drains through a hose to a gravel dry well; feed it off the existing hose bib with a quick-connect you disconnect in January.</li>
+        </ul>
+      </div>
+      <div class="callout">
+        <p><b>Do not skip the air gap.</b> Vinyl fence panels start to soften and cup somewhere around 160&nbsp;°F, and a closed grill hood radiating at a panel 4 inches away will get there on a July afternoon. The galvanized panel plus 6 inches of moving air is the whole fix, and it costs $92.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sechead">
+    <span class="eyebrow">04 — Palette</span>
+    <h2>Fall farm, in real materials</h2>
+    <p class="lede">Four ground materials and three accents. The white fence and white block house stay white — they're the negative space that makes the warm tones read.</p>
+  </div>
+
+  <div class="palette">
+    <div class="chip"><div class="cap" style="background:#C08A62"></div><div class="txt"><b>Sierra blend paver</b><span>Terrace + kitchen apron<br>Tumbled concrete, running bond</span></div></div>
+    <div class="chip"><div class="cap" style="background:#CBA65C"></div><div class="txt"><b>Gold crushed granite</b><span>Fire circle + paths<br>3/8" minus, compacted 3" deep</span></div></div>
+    <div class="chip"><div class="cap" style="background:#B3A187"></div><div class="txt"><b>Tan river rock</b><span>Drip strip along the house<br>1–2" washed, over fabric</span></div></div>
+    <div class="chip"><div class="cap" style="background:#6E4C31"></div><div class="txt"><b>Brown bark mulch</b><span>All planting beds<br>Pine bark nuggets, 3" deep</span></div></div>
+    <div class="chip"><div class="cap" style="background:#A6432A"></div><div class="txt"><b>Barn rust</b><span>Fire pit, grill bay, croton<br>The one loud color</span></div></div>
+    <div class="chip"><div class="cap" style="background:#B07C18"></div><div class="txt"><b>Harvest gold</b><span>Galvanized + barnwood bar<br>Warms under low sun</span></div></div>
+    <div class="chip"><div class="cap" style="background:#5F6E3C"></div><div class="txt"><b>Olive</b><span>Coontie, muhly, firebush<br>Reads green all winter</span></div></div>
+    <div class="chip"><div class="cap" style="background:#3A3730"></div><div class="txt"><b>Iron black</b><span>Your existing table + chairs<br>Already on site — no purchase</span></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sechead">
+    <span class="eyebrow">05 — Planting</span>
+    <h2>Eight plants that peak in October</h2>
+  </div>
+  <div class="tscroll">
+    <table>
+      <thead><tr><th>Plant</th><th class="num">Qty</th><th>Where</th><th>Fall show</th><th>Water</th></tr></thead>
+      <tbody>
+        <tr><td><b>Muhly grass</b><br><span class="small">Muhlenbergia capillaris</span></td><td class="num">9</td><td>Back fence bed, in front of the bird of paradise</td><td>Pink smoke, Oct–Nov</td><td>Low</td></tr>
+        <tr><td><b>Firebush</b><br><span class="small">Hamelia patens</span></td><td class="num">3</td><td>Left fence behind the fire circle</td><td>Scarlet tubes, red leaves</td><td>Low</td></tr>
+        <tr><td><b>Croton 'Mammy'</b><br><span class="small">Codiaeum variegatum</span></td><td class="num">5</td><td>Kitchen corner, framing the counter</td><td>Orange/gold year-round</td><td>Low</td></tr>
+        <tr><td><b>Copper plant</b><br><span class="small">Acalypha wilkesiana</span></td><td class="num">3</td><td>Terrace corners</td><td>Bronze foliage</td><td>Moderate</td></tr>
+        <tr><td><b>Coontie</b><br><span class="small">Zamia integrifolia — FL native</span></td><td class="num">7</td><td>River rock strip along the house</td><td>Deep green, structural</td><td>Very low</td></tr>
+        <tr><td><b>Blue daze</b><br><span class="small">Evolvulus glomeratus</span></td><td class="num">12</td><td>Path edges</td><td>Blue against the rust</td><td>Low</td></tr>
+        <tr><td><b>Bird of paradise</b><br><span class="small">Existing — keep</span></td><td class="num">3</td><td>Back center, already planted</td><td>Architectural backdrop</td><td>Moderate</td></tr>
+        <tr><td><b>Fruit tree</b><br><span class="small">Existing — keep</span></td><td class="num">1</td><td>Back-left corner, over the lounge</td><td>Shade + fruit</td><td>Moderate</td></tr>
+      </tbody>
+      <caption>All full-sun tolerant and established-drought tolerant in zone 9b. Hand-water the first eight weeks, then only in dry spells.</caption>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="sechead">
+    <span class="eyebrow">06 — Money</span>
+    <h2>Three ways to buy it</h2>
+    <p class="lede">DIY materials only, 2026 Central Florida big-box and bulk-yard pricing, no labor. Bulk delivery beats bags by roughly half on anything over a ton.</p>
+  </div>
+  <div class="tscroll">
+    <table>
+      <thead><tr><th>Scope</th><th class="num">Budget</th><th class="num">Recommended</th><th class="num">Stretch</th></tr></thead>
+      <tbody>
+        <tr><td>Kill turf, clear, grade, edging</td><td class="num">180</td><td class="num rec">260</td><td class="num">340</td></tr>
+        <tr><td>Fire pit lounge — granite circle + ring</td><td class="num">420</td><td class="num rec">640</td><td class="num">1,150</td></tr>
+        <tr><td>Terrace pavers + two paths</td><td class="num">690</td><td class="num rec">1,120</td><td class="num">2,400</td></tr>
+        <tr><td>Outdoor kitchen</td><td class="num">700</td><td class="num rec">980</td><td class="num">2,300</td></tr>
+        <tr><td>River rock, mulch, fabric</td><td class="num">340</td><td class="num rec">520</td><td class="num">780</td></tr>
+        <tr><td>Plants</td><td class="num">160</td><td class="num rec">380</td><td class="num">700</td></tr>
+        <tr><td>Low-voltage lighting</td><td class="num">90</td><td class="num rec">210</td><td class="num">480</td></tr>
+        <tr class="total"><td>Total materials</td><td class="num">$2,580</td><td class="num rec">$4,110</td><td class="num">$8,150</td></tr>
+      </tbody>
+      <caption>Budget = reuse the kettle grill, bag mulch on sale, 16×16 square pavers. Recommended = tumbled sierra pavers, slide-in grill, bulk delivery. Stretch = granite remnant top, gas fire pit, full paver terrace with a border course.</caption>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="sechead">
+    <span class="eyebrow">07 — Sequence</span>
+    <h2>Four weekends, in this order</h2>
+    <p class="lede">The order matters: base work before anything pretty, and the kitchen before the surfaces around it so you can drop block without protecting pavers.</p>
+  </div>
+  <div class="seq">
+    <div class="step">
+      <span class="wk">Weekend one</span>
+      <h4>Clear and shape</h4>
+      <ul>
+        <li>Call 811 — there's irrigation out there</li>
+        <li>Spray or sheet-mulch the remaining turf</li>
+        <li>Mark all three zones with paint and a string line</li>
+        <li>Grade away from the house, ¼" per foot</li>
+      </ul>
+    </div>
+    <div class="step">
+      <span class="wk">Weekend two</span>
+      <h4>Build the kitchen</h4>
+      <ul>
+        <li>Base and compact the counter footprint</li>
+        <li>Dry-stack both courses, leave the bays</li>
+        <li>Set the slab top and the bar board</li>
+        <li>Furring, heat shield, smear finish</li>
+      </ul>
+    </div>
+    <div class="step">
+      <span class="wk">Weekend three</span>
+      <h4>Lay the hard surfaces</h4>
+      <ul>
+        <li>Base, screed, and set terrace pavers</li>
+        <li>Cut and set the soldier course border</li>
+        <li>Edge and compact both granite paths</li>
+        <li>Sweep polymeric sand, mist, done</li>
+      </ul>
+    </div>
+    <div class="step">
+      <span class="wk">Weekend four</span>
+      <h4>Circle, rock, plants</h4>
+      <ul>
+        <li>Granite circle and the fire pit ring</li>
+        <li>Fabric and river rock along the house</li>
+        <li>Set plants, then mulch around them</li>
+        <li>Run the low-voltage line and lights</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sechead">
+    <span class="eyebrow">08 — Before you start</span>
+    <h2>Florida fine print</h2>
+  </div>
+  <div class="notes">
+    <div class="note"><span class="hd">Termites</span><p>Keep bark mulch a full 12–18" off the block walls. The river rock drip strip in the plan is doing that job, not decoration — and it's why the existing gravel strip along the left wall should stay.</p></div>
+    <div class="note"><span class="hd">Fabric</span><p>Woven landscape fabric under rock, yes. Under mulch, never — it fails in about two seasons and then you're pulling shredded plastic out of the bed. Use plain cardboard and 3" of mulch instead.</p></div>
+    <div class="note"><span class="hd">Drainage</span><p>Your yard already sheds toward the back fence. Keep that. Pavers and compacted granite both shed water, so removing turf means slightly more runoff — hold ¼" per foot of fall away from the slab and don't dam the low corner with edging.</p></div>
+    <div class="note"><span class="hd">Fire pit</span><p>Wood-burning pits need 12 feet of clearance to the fence, the house and the tree canopy, and many Central Florida HOAs and counties restrict open burning during dry season. A propane insert sidesteps all of it for about $320 more.</p></div>
+    <div class="note"><span class="hd">HOA</span><p>Check the ARC rules before you set block. Permanent structures along a fence line and anything over 30" tall are the two things that commonly need approval, and a dry-stacked counter still reads as permanent.</p></div>
+    <div class="note"><span class="hd">Weeds</span><p>No grass doesn't mean no weeding. Two applications of a granular pre-emergent a year, spring and fall, over rock and mulch alike, is the difference between this looking sharp in year three and looking abandoned.</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>Plan drawn from three site photos, September 2026. Dimensions are estimated — verify with a tape before ordering. Prices are DIY material estimates for Central Florida and exclude labor, permits, and delivery.</p>
+</footer>
+
+</div>
