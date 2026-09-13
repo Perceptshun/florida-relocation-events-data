@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en" data-theme="day">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My Life Stories</title>
+<meta name="description" content="Speak your memories. They are written down and sorted for you.">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1f5c3a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="My Stories">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="icon-192.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <h1 id="pageTitle">My Life Stories</h1>
+    <button class="icon-btn" id="textSmaller" title="Smaller text" aria-label="Make text smaller">A−</button>
+    <button class="icon-btn" id="textBigger" title="Bigger text" aria-label="Make text bigger">A+</button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================ TALK ============================ -->
+<section id="view-talk" class="wrap">
+
+  <div class="warn hide" id="micWarning"></div>
+
+  <div class="talk-stage">
+    <button id="talkBtn" aria-pressed="false">
+      <span class="mic" aria-hidden="true">🎤</span>
+      <span id="talkLabel">Press to<br>Start Talking</span>
+    </button>
+    <p class="status" id="status" role="status" aria-live="polite">Press the green circle, then just talk.</p>
+  </div>
+
+  <div class="live" id="live" aria-live="off"></div>
+
+  <div class="cat-pick hide" id="catPick">
+    <p id="catExplain">I think this one goes here:</p>
+    <div class="chips" role="group" aria-label="Which kind of writing is this?">
+      <button class="chip" data-cat="self"  aria-pressed="false"><span class="dot" aria-hidden="true">👤</span>About<br>My Life</button>
+      <button class="chip" data-cat="other" aria-pressed="false"><span class="dot" aria-hidden="true">👥</span>About<br>Someone Real</button>
+      <button class="chip" data-cat="story" aria-pressed="false"><span class="dot" aria-hidden="true">📖</span>A Made-Up<br>Story</button>
+    </div>
+  </div>
+
+  <div class="row" id="saveRow" style="margin-top:16px">
+    <button class="primary" id="saveBtn" disabled>✓ Save It</button>
+    <button class="quiet" id="clearBtn" disabled>✗ Throw Away</button>
+  </div>
+
+  <p class="note" style="margin-top:18px">
+    Tip: say <b>“new paragraph”</b> to start a new paragraph, or <b>“period”</b> and
+    <b>“comma”</b> to add punctuation. Everything is saved on this device only.
+  </p>
+</section>
+
+<!-- ========================== MY WRITING ========================== -->
+<section id="view-writing" class="wrap hide">
+  <div class="tabs" role="tablist">
+    <button role="tab" data-tab="self"  aria-selected="true">👤 About<br>My Life</button>
+    <button role="tab" data-tab="other" aria-selected="false">👥 About<br>Someone Real</button>
+    <button role="tab" data-tab="story" aria-selected="false">📖 Made-Up<br>Stories</button>
+  </div>
+
+  <div class="row no-print" style="margin-bottom:18px">
+    <button class="quiet" id="printBtn">🖨️ Print This Book</button>
+    <button class="quiet" id="downloadBtn">⬇️ Save as a File</button>
+  </div>
+
+  <div id="entryList"></div>
+</section>
+
+<!-- =========================== STREAK =========================== -->
+<section id="view-streak" class="wrap hide">
+  <div class="streak-top">
+    <div class="stat"><b id="statCurrent">0</b><span>IN A ROW</span></div>
+    <div class="stat"><b id="statTotal">0</b><span>DAYS USED</span></div>
+    <div class="stat"><b id="statBest">0</b><span>BEST EVER</span></div>
+  </div>
+
+  <div class="card">
+    <div class="cal-head">
+      <button class="icon-btn" id="calPrev" aria-label="Previous month">◀</button>
+      <h2 id="calTitle">Month</h2>
+      <button class="icon-btn" id="calNext" aria-label="Next month">▶</button>
+    </div>
+    <div class="grid" id="calGrid"></div>
+    <p class="note" style="margin-top:14px">A ✓ appears on every day you write something.</p>
+  </div>
+
+  <div class="card">
+    <h2>How much you have written</h2>
+    <p id="wordCounts" class="note"></p>
+  </div>
+</section>
+
+<!-- ========================== HELP / SETUP ========================== -->
+<section id="view-help" class="wrap hide">
+  <div class="card">
+    <h2>How to use this</h2>
+    <ol class="steps">
+      <li>Tap the big green circle.</li>
+      <li>If your phone or computer asks to use the microphone, tap <b>Allow</b>.</li>
+      <li>Talk normally. Your words appear on the screen.</li>
+      <li>Tap the circle again when you are done.</li>
+      <li>Check the box it picked for you — change it if it guessed wrong — and tap <b>Save It</b>.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Settings</h2>
+    <div class="row">
+      <button class="quiet" id="themeBtn">🌙 Night Colors</button>
+      <button class="quiet" id="readBackBtn">🔊 Read My Words Back: On</button>
+    </div>
+  </div>
+
+  <div class="card" id="driveCard">
+    <h2>Save to Google Drive</h2>
+    <p class="note" id="driveBlurb">
+      Off. Your writing stays on this device only.
+    </p>
+    <p class="note" id="driveStatus" role="status" aria-live="polite"></p>
+
+    <div class="row" id="driveOffRow">
+      <button class="quiet" id="driveConnect">☁️ Turn On Drive Saving</button>
+    </div>
+
+    <div class="row hide" id="driveOnRow">
+      <button class="quiet" id="driveOpen">📄 Open My Documents</button>
+      <button class="quiet" id="driveDisconnect">Turn Drive Saving Off</button>
+    </div>
+
+    <details id="driveSetup" style="margin-top:14px">
+      <summary class="note" style="cursor:pointer;padding:8px 0">Use my own Google set-up</summary>
+      <p class="note">
+        Paste a Google OAuth client id to point this app at your own Google project.
+        The README explains how to make one — it takes about five minutes and is free.
+      </p>
+      <input type="text" id="driveClientId" placeholder="1234-abcd.apps.googleusercontent.com"
+             style="width:100%;font:inherit;font-size:.8em;padding:12px;border:3px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)">
+      <div class="row" style="margin-top:10px">
+        <button class="quiet" id="driveSaveId">Save This Client ID</button>
+      </div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h2>Keep your writing safe</h2>
+    <p class="note">
+      Your writing lives in this browser's storage. If the browsing data is ever cleared
+      it goes with it, so make a backup now and then — email it to someone you trust,
+      or keep it on a memory stick.
+    </p>
+    <div class="row">
+      <button class="quiet" id="backupBtn">💾 Make a Backup</button>
+      <button class="quiet" id="restoreBtn">📂 Restore a Backup</button>
+    </div>
+    <input type="file" id="restoreFile" accept="application/json,.json" class="hide">
+  </div>
+
+  <div class="card">
+    <h2>About</h2>
+    <p class="note">
+      My Life Stories works without internet once it has been opened one time.
+      <span id="privacyNote"></span>
+      <span id="engineNote"></span>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<nav class="bottom">
+  <button data-view="talk"    aria-current="page"><span class="ico" aria-hidden="true">🎤</span>Talk</button>
+  <button data-view="writing"><span class="ico" aria-hidden="true">📚</span>Writing</button>
+  <button data-view="streak"><span class="ico" aria-hidden="true">✓</span>Streak</button>
+  <button data-view="help"><span class="ico" aria-hidden="true">❓</span>Help</button>
+</nav>
+
+<script src="config.js"></script>
+<script src="drive.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
