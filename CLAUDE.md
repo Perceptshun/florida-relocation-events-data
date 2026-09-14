@@ -46,10 +46,33 @@ Key rules already written into the calendar events:
 Open item: **Strength A and Strength B are referenced in ~20 events but
 defined nowhere.** They get skipped by default as a result.
 
-## Shoe break-in protocol — 361 Mega 3 Pro
+## Shoes
 
-User's own protocol, to be applied when answering mileage questions about
-these shoes. Track cumulative miles on the pair.
+### Current rotation
+- **Mizuno Neo Zen 2** — the shoe actually being run in. Sep 12 14-miler was
+  in these.
+
+### 361 Mega 3 Pro — NOT the protocol shoe
+Expected end of September. **Plate-free** super trainer: ~36 mm heel / 30 mm
+forefoot, 6 mm drop, supercritical TPEE midsole, ~196-200 g (EU42). No carbon
+plate at all, so the break-in protocol below does NOT apply to it — that
+protocol's staged conditioning exists to adapt to plate stiffness.
+Legal for Philadelphia: 36 mm is under the World Athletics 40 mm road limit
+and there is no plate.
+
+### Li-Ning Feidian 6 Elite — protocol shoe, NOT YET OWNED
+Carbon-plated marathon racer. **The user does not have these yet.**
+The protocol below is stored on standby. **Do not apply it, and do not start
+counting miles, until the user says they have the shoes in hand.**
+Pricing research (Sep 2026): ~$175 KICKSOWN, ~$200 Supwell; Amazon fastest
+with free returns. Beware Elite vs Ultra vs Challenger — the ~$119 listings
+are the Challenger, a different shoe.
+
+## Shoe break-in protocol — Li-Ning Feidian 6 Elite (on standby)
+
+User's own protocol. Applies to the **Feidian 6 Elite** (carbon-plated) only.
+Once the user confirms they have them, track cumulative miles on the pair and
+answer mileage questions against these bands.
 
 | Cumulative | Phase | Goal | Session |
 |---|---|---|---|
@@ -61,9 +84,26 @@ these shoes. Track cumulative miles on the pair.
 Notes:
 - The top band's mileage range was cut off in the source image; 0-10 is
   inferred from the next band starting at 10.
-- **Pace discrepancy to resolve:** the protocol as written cites *8:00/mi goal
+- **Pace discrepancy, still unresolved:** the protocol cites *8:00/mi goal
   pace* and *3:30:00 marathon pace*. PM26 is built for **3:45 / 8:35 mi**.
-  Either the protocol came from a different plan or the goal has moved. Ask
-  before applying its pace figures; the mileage bands stand either way.
+  Ask before applying its pace figures; the mileage bands stand either way.
 - PM26's Week 14 event (Oct 31) says **no new shoes, no new gels, no new
-  anything** from that point. All 45-50 break-in miles must be done before it.
+  anything** from that point. All 45-50 break-in miles must be done before it,
+  which gets tighter the later the shoes arrive.
+- The Oct 10 tune-up half is the 3:45 gate. Racing it in a shoe with only
+  10-15 break-in miles is a gamble — recommendation on file is to race it in
+  the Mizunos.
+
+## Fuel and hydration — open gap
+
+Sep 12 long run (14 mi, 2h11m, 75F dew point): took **1 Honey Stinger waffle
+(~21 g carbs) ≈ 10 g/hr** against a 60-90 g/hr protocol, and **~6-10 oz fluid**
+against an estimated 2-4 L sweat loss. HR trace still stayed flat, which says
+the aerobic base is strong — but the fuelling rehearsal is not happening.
+
+- **W9 (Sep 26, 16 mi)** starts the real protocol: 60-90 g carbs/hr from mile 4.
+  A 2.5 h run needs 150-225 g — gels every 20-25 min plus carb drink mix.
+- **Sep 18 (Fri) calendar reminder** is set to weigh in/out around the Sep 19
+  long run. Sweat loss = (lb lost x 16 oz) + oz drunk; rate = that ÷ hours.
+  When the user reports the two weights, convert to an oz/hr target.
+
