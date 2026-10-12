@@ -1,19 +1,897 @@
 {
-  "updatedAt": "2026-07-29T11:58:16.768Z",
+  "updatedAt": "2026-10-12T17:35:56.919Z",
   "byCommunity": {
-    "lake-nona": [],
-    "windermere": [],
-    "winter-park": [],
-    "dr-phillips": [],
-    "lake-conway": [],
-    "oviedo": [],
-    "lake-mary": [],
-    "winter-garden": [],
-    "avalon-park": [],
-    "hunters-creek": [],
-    "sanford": [],
-    "altamonte-springs": [],
-    "apopka": [],
-    "clermont": []
+    "lake-nona": [
+      {
+        "title": "Call to Artists: Monumental Public Art Sculpture",
+        "startsAt": "2026-10-12T12:00:00.000Z",
+        "url": "https://www.orlando.gov/Events/Call-to-Artists-Monumental-Public-Art-Sculpture",
+        "source": "City of Orlando",
+        "summary": "The City of Orlando invites professional artists and artist teams to submit preliminary conceptual proposals for the design, fabrication, and installation of a permanent monumental sculpture for a new community park in the Lake Nona communi"
+      },
+      {
+        "title": "HBR Book Webinar:  Resilient Optimism",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/hbr-book-webinar-resilient-optimism-tickets-2002123901485",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "ARBD in the community: recognition, response and pathways forward",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/arbd-in-the-community-recognition-response-and-pathways-forward-tickets-1987995657527",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "The Muse Experience",
+        "startsAt": "2026-10-16T00:00:00.000Z",
+        "endsAt": "2026-10-16T00:00:00.000Z",
+        "venue": "Orlando Museum of Art (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/the-muse-experience-tickets-1999015152132",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Harbor Nights La Dolce Vita",
+        "startsAt": "2026-10-16T00:00:00.000Z",
+        "endsAt": "2026-10-16T00:00:00.000Z",
+        "venue": "Loews Portofino Bay Hotel at Universal Orlando (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/harbor-nights-la-dolce-vita-tickets-1997974924784",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "VNSSA @ CELINE ORLANDO",
+        "startsAt": "2026-10-16T00:00:00.000Z",
+        "endsAt": "2026-10-17T00:00:00.000Z",
+        "venue": "Celine Orlando (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/vnssa-celine-orlando-tickets-1998963356209",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "REWIND ⏪: Orlando’s #1 Throwback Block Party | 90s, 2000s & Early 2010s ✨",
+        "startsAt": "2026-10-17T00:00:00.000Z",
+        "endsAt": "2026-10-17T00:00:00.000Z",
+        "venue": "Wall Street Plaza (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/rewind-orlandos-1-throwback-block-party-90s-2000s-early-2010s-tickets-2001075234895",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Marvin’s Room (The Ultimate R&B experience)",
+        "startsAt": "2026-10-17T00:00:00.000Z",
+        "endsAt": "2026-10-18T00:00:00.000Z",
+        "venue": "The Beacham (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/marvins-room-the-ultimate-rb-experience-tickets-1998133833083",
+        "source": "Eventbrite"
+      }
+    ],
+    "windermere": [
+      {
+        "title": "HBR Book Webinar:  Resilient Optimism",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/hbr-book-webinar-resilient-optimism-tickets-2002123901485",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "ARBD in the community: recognition, response and pathways forward",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/arbd-in-the-community-recognition-response-and-pathways-forward-tickets-1987995657527",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Harbor Nights La Dolce Vita",
+        "startsAt": "2026-10-16T00:00:00.000Z",
+        "endsAt": "2026-10-16T00:00:00.000Z",
+        "venue": "Loews Portofino Bay Hotel at Universal Orlando (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/harbor-nights-la-dolce-vita-tickets-1997974924784",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "REWIND ⏪: Orlando’s #1 Throwback Block Party | 90s, 2000s & Early 2010s ✨",
+        "startsAt": "2026-10-17T00:00:00.000Z",
+        "endsAt": "2026-10-17T00:00:00.000Z",
+        "venue": "Wall Street Plaza (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/rewind-orlandos-1-throwback-block-party-90s-2000s-early-2010s-tickets-2001075234895",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "LEMON DROP & SEAFOOD FESTIVAL",
+        "startsAt": "2026-10-18T00:00:00.000Z",
+        "endsAt": "2026-10-18T00:00:00.000Z",
+        "venue": "Wall Street Plaza (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/lemon-drop-seafood-festival-tickets-1996449691771",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Romantasy BookCon- Orlando 2026",
+        "startsAt": "2026-10-22T00:00:00.000Z",
+        "endsAt": "2026-10-24T00:00:00.000Z",
+        "venue": "Hilton Orlando Lake Buena Vista - Disney Springs Area (Lake Buena Vista, FL)",
+        "url": "https://www.eventbrite.com/e/romantasy-bookcon-orlando-2026-tickets-1924405902859",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Coming Together for Multilingual Children with DLD",
+        "startsAt": "2026-10-22T00:00:00.000Z",
+        "endsAt": "2026-10-22T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/coming-together-for-multilingual-children-with-dld-tickets-2002231587577",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "That R&B Block Party: Orlando’s First Ever R&B Block Party",
+        "startsAt": "2026-10-25T00:00:00.000Z",
+        "endsAt": "2026-10-25T00:00:00.000Z",
+        "venue": "Walter's Tavern (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/that-rb-block-party-orlandos-first-ever-rb-block-party-tickets-1998984018009",
+        "source": "Eventbrite"
+      }
+    ],
+    "winter-park": [
+      {
+        "title": "Crystal Bowl Sound Meditation for Community + Connection",
+        "startsAt": "2026-10-12T00:00:00.000Z",
+        "endsAt": "2026-10-12T00:00:00.000Z",
+        "venue": "Winter Park Community Center (Winter Park, FL)",
+        "url": "https://www.eventbrite.com/e/crystal-bowl-sound-meditation-for-community-connection-tickets-2002463690804",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Wacky Winter Park Scavenger Hunt",
+        "startsAt": "2026-10-12T00:00:00.000Z",
+        "endsAt": "2026-10-12T00:00:00.000Z",
+        "venue": "CFS Coffee Winter Park (Winter Park, FL)",
+        "url": "https://www.eventbrite.com/e/wacky-winter-park-scavenger-hunt-tickets-1994859504478",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Mead Botanical Garden Volunteer Orientation",
+        "startsAt": "2026-10-13T00:00:00.000Z",
+        "endsAt": "2026-10-13T00:00:00.000Z",
+        "venue": "1300 S Denning Dr (Winter Park, FL)",
+        "url": "https://www.eventbrite.com/e/mead-botanical-garden-volunteer-orientation-tickets-1977403067806",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "HBR Book Webinar:  Resilient Optimism",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/hbr-book-webinar-resilient-optimism-tickets-2002123901485",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "ARBD in the community: recognition, response and pathways forward",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/arbd-in-the-community-recognition-response-and-pathways-forward-tickets-1987995657527",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "NAREB BUSINESS RALLY | SOCIAL HOUR",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "venue": "480 N Orlando Ave (Winter Park, FL)",
+        "url": "https://www.eventbrite.com/e/nareb-business-rally-social-hour-tickets-2000083966986",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "MOAR 2026 BUSINESS RALLY",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "venue": "1920 N Forest Ave (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/moar-2026-business-rally-tickets-2002486485985",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Environmental Advocacy Symposium",
+        "startsAt": "2026-10-16T00:00:00.000Z",
+        "endsAt": "2026-10-16T00:00:00.000Z",
+        "venue": "Barry University School of Law - Moot Courtroom (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/environmental-advocacy-symposium-tickets-2002135754939",
+        "source": "Eventbrite"
+      }
+    ],
+    "dr-phillips": [
+      {
+        "title": "Hooked On BINGO & Karaoke Thursdays",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "venue": "King Cajun Crawfish (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/hooked-on-bingo-karaoke-thursdays-tickets-2000082908821",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "HBR Book Webinar:  Resilient Optimism",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/hbr-book-webinar-resilient-optimism-tickets-2002123901485",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "ARBD in the community: recognition, response and pathways forward",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/arbd-in-the-community-recognition-response-and-pathways-forward-tickets-1987995657527",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "The Bond Room - Friday & Saturday Nights",
+        "startsAt": "2026-10-16T00:00:00.000Z",
+        "endsAt": "2026-10-17T00:00:00.000Z",
+        "venue": "London House Orlando (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/the-bond-room-friday-saturday-nights-tickets-1990752346859",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "✨LADIES Radiance & Recovery Soirée! ✨",
+        "startsAt": "2026-10-17T00:00:00.000Z",
+        "endsAt": "2026-10-17T00:00:00.000Z",
+        "venue": "Longevity Haus Wellness & Recovery (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/ladies-radiance-recovery-soiree-tickets-2002461749999",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Krabs & Karaoke Brunch",
+        "startsAt": "2026-10-17T00:00:00.000Z",
+        "endsAt": "2026-10-17T00:00:00.000Z",
+        "venue": "King Cajun Crawfish & Oyster Bar (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/krabs-karaoke-brunch-tickets-2002896799243",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Sunday HOUSE BRUNCH with DJ Andre Mack",
+        "startsAt": "2026-10-18T00:00:00.000Z",
+        "endsAt": "2026-10-18T00:00:00.000Z",
+        "venue": "Lizzy's Live (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/sunday-house-brunch-with-dj-andre-mack-tickets-2002740569957",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Leveraging Seller Concessions: Workshop for Real Estate Professionals",
+        "startsAt": "2026-10-20T00:00:00.000Z",
+        "endsAt": "2026-10-20T00:00:00.000Z",
+        "venue": "Fidelity National Title - Sand Lake (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/leveraging-seller-concessions-workshop-for-real-estate-professionals-tickets-2002529653099",
+        "source": "Eventbrite"
+      }
+    ],
+    "lake-conway": [
+      {
+        "title": "HBR Book Webinar:  Resilient Optimism",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/hbr-book-webinar-resilient-optimism-tickets-2002123901485",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "ARBD in the community: recognition, response and pathways forward",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/arbd-in-the-community-recognition-response-and-pathways-forward-tickets-1987995657527",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Harbor Nights La Dolce Vita",
+        "startsAt": "2026-10-16T00:00:00.000Z",
+        "endsAt": "2026-10-16T00:00:00.000Z",
+        "venue": "Loews Portofino Bay Hotel at Universal Orlando (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/harbor-nights-la-dolce-vita-tickets-1997974924784",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "REWIND ⏪: Orlando’s #1 Throwback Block Party | 90s, 2000s & Early 2010s ✨",
+        "startsAt": "2026-10-17T00:00:00.000Z",
+        "endsAt": "2026-10-17T00:00:00.000Z",
+        "venue": "Wall Street Plaza (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/rewind-orlandos-1-throwback-block-party-90s-2000s-early-2010s-tickets-2001075234895",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "LEMON DROP & SEAFOOD FESTIVAL",
+        "startsAt": "2026-10-18T00:00:00.000Z",
+        "endsAt": "2026-10-18T00:00:00.000Z",
+        "venue": "Wall Street Plaza (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/lemon-drop-seafood-festival-tickets-1996449691771",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Romantasy BookCon- Orlando 2026",
+        "startsAt": "2026-10-22T00:00:00.000Z",
+        "endsAt": "2026-10-24T00:00:00.000Z",
+        "venue": "Hilton Orlando Lake Buena Vista - Disney Springs Area (Lake Buena Vista, FL)",
+        "url": "https://www.eventbrite.com/e/romantasy-bookcon-orlando-2026-tickets-1924405902859",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Coming Together for Multilingual Children with DLD",
+        "startsAt": "2026-10-22T00:00:00.000Z",
+        "endsAt": "2026-10-22T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/coming-together-for-multilingual-children-with-dld-tickets-2002231587577",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "That R&B Block Party: Orlando’s First Ever R&B Block Party",
+        "startsAt": "2026-10-25T00:00:00.000Z",
+        "endsAt": "2026-10-25T00:00:00.000Z",
+        "venue": "Walter's Tavern (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/that-rb-block-party-orlandos-first-ever-rb-block-party-tickets-1998984018009",
+        "source": "Eventbrite"
+      }
+    ],
+    "oviedo": [
+      {
+        "title": "HBR Book Webinar:  Resilient Optimism",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/hbr-book-webinar-resilient-optimism-tickets-2002123901485",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "ARBD in the community: recognition, response and pathways forward",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/arbd-in-the-community-recognition-response-and-pathways-forward-tickets-1987995657527",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "The Muse Experience",
+        "startsAt": "2026-10-16T00:00:00.000Z",
+        "endsAt": "2026-10-16T00:00:00.000Z",
+        "venue": "Orlando Museum of Art (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/the-muse-experience-tickets-1999015152132",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "¡Viva Oviedo! Festival",
+        "startsAt": "2026-10-17T00:00:00.000Z",
+        "endsAt": "2026-10-17T00:00:00.000Z",
+        "venue": "Oviedo Amphitheatre & Cultural Center (Oviedo, FL)",
+        "url": "https://www.eventbrite.com/e/viva-oviedo-festival-tickets-2002248697754",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "REWIND ⏪: Orlando’s #1 Throwback Block Party | 90s, 2000s & Early 2010s ✨",
+        "startsAt": "2026-10-17T00:00:00.000Z",
+        "endsAt": "2026-10-17T00:00:00.000Z",
+        "venue": "Wall Street Plaza (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/rewind-orlandos-1-throwback-block-party-90s-2000s-early-2010s-tickets-2001075234895",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "UCF Club Lacrosse Annual Golf Tournament",
+        "startsAt": "2026-10-18T00:00:00.000Z",
+        "endsAt": "2026-10-18T00:00:00.000Z",
+        "venue": "Twin Rivers Golf Club (Oviedo, FL)",
+        "url": "https://www.eventbrite.com/e/ucf-club-lacrosse-annual-golf-tournament-tickets-1999335992775",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "LEMON DROP & SEAFOOD FESTIVAL",
+        "startsAt": "2026-10-18T00:00:00.000Z",
+        "endsAt": "2026-10-18T00:00:00.000Z",
+        "venue": "Wall Street Plaza (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/lemon-drop-seafood-festival-tickets-1996449691771",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "The Life by Design: Business Planning Clinic",
+        "startsAt": "2026-10-19T00:00:00.000Z",
+        "endsAt": "2026-10-19T00:00:00.000Z",
+        "venue": "Keller Williams Advantage (Oviedo, FL)",
+        "url": "https://www.eventbrite.com/e/the-life-by-design-business-planning-clinic-tickets-2001633525758",
+        "source": "Eventbrite"
+      }
+    ],
+    "lake-mary": [
+      {
+        "title": "The Forest CERT (Lake Mary)",
+        "startsAt": "2026-10-14T00:00:00.000Z",
+        "endsAt": "2026-10-14T00:00:00.000Z",
+        "venue": "400 N Forest Blvd (Lake Mary, FL)",
+        "url": "https://www.eventbrite.com/e/the-forest-cert-lake-mary-tickets-1993545584508",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Thursday Night Football Bingo Bash at the Friendly Confines",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "venue": "Friendly Confines Sports Restaurant (Lake Mary, FL)",
+        "url": "https://www.eventbrite.com/e/thursday-night-football-bingo-bash-at-the-friendly-confines-tickets-1999031753788",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "HBR Book Webinar:  Resilient Optimism",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/hbr-book-webinar-resilient-optimism-tickets-2002123901485",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "ARBD in the community: recognition, response and pathways forward",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/arbd-in-the-community-recognition-response-and-pathways-forward-tickets-1987995657527",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "REWIND ⏪: Orlando’s #1 Throwback Block Party | 90s, 2000s & Early 2010s ✨",
+        "startsAt": "2026-10-17T00:00:00.000Z",
+        "endsAt": "2026-10-17T00:00:00.000Z",
+        "venue": "Wall Street Plaza (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/rewind-orlandos-1-throwback-block-party-90s-2000s-early-2010s-tickets-2001075234895",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Day of Data Orlando 2026",
+        "startsAt": "2026-10-17T00:00:00.000Z",
+        "endsAt": "2026-10-17T00:00:00.000Z",
+        "venue": "Seminole State College - Sanford/Lake Mary Campus (Sanford, FL)",
+        "url": "https://www.eventbrite.com/e/day-of-data-orlando-2026-tickets-1994253151861",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "LEMON DROP & SEAFOOD FESTIVAL",
+        "startsAt": "2026-10-18T00:00:00.000Z",
+        "endsAt": "2026-10-18T00:00:00.000Z",
+        "venue": "Wall Street Plaza (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/lemon-drop-seafood-festival-tickets-1996449691771",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Winter Park Institute Presents:  A Conversation with José Andrés",
+        "startsAt": "2026-10-20T00:00:00.000Z",
+        "endsAt": "2026-10-20T00:00:00.000Z",
+        "venue": "Warden Arena (Winter Park, FL)",
+        "url": "https://www.eventbrite.com/e/winter-park-institute-presents-a-conversation-with-jose-andres-tickets-1998398604020",
+        "source": "Eventbrite"
+      }
+    ],
+    "winter-garden": [
+      {
+        "title": "Now Serving Beer & Wine | Harrell's Hot Dogs + Cold Cones",
+        "startsAt": "2026-10-13T00:00:00.000Z",
+        "endsAt": "2026-10-13T00:00:00.000Z",
+        "venue": "Harrell's Hot Dogs + Cold Cones (Winter Garden, FL)",
+        "url": "https://www.eventbrite.com/e/now-serving-beer-wine-harrells-hot-dogs-cold-cones-tickets-1986918282068",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Marketing on Tap",
+        "startsAt": "2026-10-14T00:00:00.000Z",
+        "endsAt": "2026-10-14T00:00:00.000Z",
+        "venue": "Windermere Brewing Company (Windermere, FL)",
+        "url": "https://www.eventbrite.com/e/marketing-on-tap-tickets-2002352113072",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Up To No Good Thursdays | Harlow Grove",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-16T00:00:00.000Z",
+        "venue": "Harlow Grove (Winter Garden, FL)",
+        "url": "https://www.eventbrite.com/e/up-to-no-good-thursdays-harlow-grove-tickets-1987685415585",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Everyone Deserves A Family 4th Annual Fundraiser",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "venue": "Windermere Brewing Company (Windermere, FL)",
+        "url": "https://www.eventbrite.com/e/everyone-deserves-a-family-4th-annual-fundraiser-tickets-1992790447874",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "HBR Book Webinar:  Resilient Optimism",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/hbr-book-webinar-resilient-optimism-tickets-2002123901485",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "ARBD in the community: recognition, response and pathways forward",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/arbd-in-the-community-recognition-response-and-pathways-forward-tickets-1987995657527",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Game Days At AJ's Pizza Joint",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "venue": "AJ's Pizza Joint (Winter Garden, FL)",
+        "url": "https://www.eventbrite.com/e/game-days-at-ajs-pizza-joint-tickets-1999038427750",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Game Nights at  Toll Road Brewing Company  - Ocoee",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "venue": "Toll Road Brewing Company (Ocoee, FL)",
+        "url": "https://www.eventbrite.com/e/game-nights-at-toll-road-brewing-company-ocoee-tickets-1538519014789",
+        "source": "Eventbrite"
+      }
+    ],
+    "avalon-park": [
+      {
+        "title": "Keg Social College Night",
+        "startsAt": "2026-10-14T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "venue": "KEG SOCIAL ORLANDO - Dining & Entertainment (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/keg-social-college-night-tickets-1996258086675",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Free Class: Fall Floral Arrangement",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "venue": "The Table - Event Venue (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/free-class-fall-floral-arrangement-tickets-2000643615911",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "HBR Book Webinar:  Resilient Optimism",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/hbr-book-webinar-resilient-optimism-tickets-2002123901485",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "ARBD in the community: recognition, response and pathways forward",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/arbd-in-the-community-recognition-response-and-pathways-forward-tickets-1987995657527",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Konpa Dance Classes in Orlando",
+        "startsAt": "2026-10-16T00:00:00.000Z",
+        "endsAt": "2026-10-16T00:00:00.000Z",
+        "venue": "DanzForce Extreme (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/konpa-dance-classes-in-orlando-tickets-1998787450069",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "It's Just a Bunch of Hocus Pocus Move Night",
+        "startsAt": "2026-10-16T00:00:00.000Z",
+        "endsAt": "2026-10-16T00:00:00.000Z",
+        "venue": "3885 Avalon Park E Blvd (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/its-just-a-bunch-of-hocus-pocus-move-night-tickets-2001630519767",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "AI Offer Builder Lab: Package, Price & Present Your Servicev",
+        "startsAt": "2026-10-16T00:00:00.000Z",
+        "endsAt": "2026-10-16T00:00:00.000Z",
+        "venue": "3801 Avalon Park E Blvd suite 200 (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/ai-offer-builder-lab-package-price-present-your-servicev-tickets-2002609615268",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "90-Day Growth Decision Lab: What to Focus On Next",
+        "startsAt": "2026-10-16T00:00:00.000Z",
+        "endsAt": "2026-10-16T00:00:00.000Z",
+        "venue": "The 5th Floor Orlando (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/90-day-growth-decision-lab-what-to-focus-on-next-tickets-2002610261200",
+        "source": "Eventbrite"
+      }
+    ],
+    "hunters-creek": [
+      {
+        "title": "HBR Book Webinar:  Resilient Optimism",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/hbr-book-webinar-resilient-optimism-tickets-2002123901485",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "ARBD in the community: recognition, response and pathways forward",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/arbd-in-the-community-recognition-response-and-pathways-forward-tickets-1987995657527",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Harbor Nights La Dolce Vita",
+        "startsAt": "2026-10-16T00:00:00.000Z",
+        "endsAt": "2026-10-16T00:00:00.000Z",
+        "venue": "Loews Portofino Bay Hotel at Universal Orlando (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/harbor-nights-la-dolce-vita-tickets-1997974924784",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "REWIND ⏪: Orlando’s #1 Throwback Block Party | 90s, 2000s & Early 2010s ✨",
+        "startsAt": "2026-10-17T00:00:00.000Z",
+        "endsAt": "2026-10-17T00:00:00.000Z",
+        "venue": "Wall Street Plaza (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/rewind-orlandos-1-throwback-block-party-90s-2000s-early-2010s-tickets-2001075234895",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "LEMON DROP & SEAFOOD FESTIVAL",
+        "startsAt": "2026-10-18T00:00:00.000Z",
+        "endsAt": "2026-10-18T00:00:00.000Z",
+        "venue": "Wall Street Plaza (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/lemon-drop-seafood-festival-tickets-1996449691771",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Romantasy BookCon- Orlando 2026",
+        "startsAt": "2026-10-22T00:00:00.000Z",
+        "endsAt": "2026-10-24T00:00:00.000Z",
+        "venue": "Hilton Orlando Lake Buena Vista - Disney Springs Area (Lake Buena Vista, FL)",
+        "url": "https://www.eventbrite.com/e/romantasy-bookcon-orlando-2026-tickets-1924405902859",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Coming Together for Multilingual Children with DLD",
+        "startsAt": "2026-10-22T00:00:00.000Z",
+        "endsAt": "2026-10-22T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/coming-together-for-multilingual-children-with-dld-tickets-2002231587577",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "That R&B Block Party: Orlando’s First Ever R&B Block Party",
+        "startsAt": "2026-10-25T00:00:00.000Z",
+        "endsAt": "2026-10-25T00:00:00.000Z",
+        "venue": "Walter's Tavern (Orlando, FL)",
+        "url": "https://www.eventbrite.com/e/that-rb-block-party-orlandos-first-ever-rb-block-party-tickets-1998984018009",
+        "source": "Eventbrite"
+      }
+    ],
+    "sanford": [
+      {
+        "title": "Home & Lawn Maintenance / Home Safety",
+        "startsAt": "2026-10-12T00:00:00.000Z",
+        "endsAt": "2026-10-12T00:00:00.000Z",
+        "venue": "102 Anderson Cir (Sanford, FL)",
+        "url": "https://www.eventbrite.com/e/home-lawn-maintenance-home-safety-tickets-1993546823213",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "First Shots Essential Firearms Training | Decision Tactical",
+        "startsAt": "2026-10-13T00:00:00.000Z",
+        "endsAt": "2026-10-13T00:00:00.000Z",
+        "venue": "Decision Tactical - North Orlando (Sanford, FL)",
+        "url": "https://www.eventbrite.com/e/first-shots-essential-firearms-training-decision-tactical-tickets-1988036062379",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Winedown Wednesday (Sanford)",
+        "startsAt": "2026-10-14T00:00:00.000Z",
+        "endsAt": "2026-10-14T00:00:00.000Z",
+        "venue": "Chronic Guru Dispensary & Lounge - Sanford (Sanford, FL)",
+        "url": "https://www.eventbrite.com/e/winedown-wednesday-sanford-tickets-1980241840652",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "HBR Book Webinar:  Resilient Optimism",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/hbr-book-webinar-resilient-optimism-tickets-2002123901485",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "ARBD in the community: recognition, response and pathways forward",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/arbd-in-the-community-recognition-response-and-pathways-forward-tickets-1987995657527",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Deadly Secrets: A Murder Mystery Dining Cruise Aboard the Barbara Lee",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "venue": "St Johns Rivership Company (Sanford, FL)",
+        "url": "https://www.eventbrite.com/e/deadly-secrets-a-murder-mystery-dining-cruise-aboard-the-barbara-lee-tickets-1987010204009",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "HSCSC Childbirth Classes - October 2026 Series",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "venue": "UF/IFAS Seminole Extension (Sanford, FL)",
+        "url": "https://www.eventbrite.com/e/hscsc-childbirth-classes-october-2026-series-tickets-2000180923987",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "ROCKTOBERFEST SHOW -TRIXTER, KAMENAR & PERMA CRUSH 3 BANDS - 1 NIGHT",
+        "startsAt": "2026-10-16T00:00:00.000Z",
+        "endsAt": "2026-10-16T00:00:00.000Z",
+        "venue": "Lake Mary Pub & Tiki Bar (Lake Mary, FL)",
+        "url": "https://www.eventbrite.com/e/rocktoberfest-show-trixter-kamenar-perma-crush-3-bands-1-night-tickets-1996982267720",
+        "source": "Eventbrite"
+      }
+    ],
+    "altamonte-springs": [
+      {
+        "title": "Let's Get Sewing",
+        "startsAt": "2026-10-12T00:00:00.000Z",
+        "endsAt": "2026-10-12T00:00:00.000Z",
+        "venue": "Altamonte Springs Library (Altamonte Springs, FL)",
+        "url": "https://www.eventbrite.com/e/lets-get-sewing-tickets-2001403056418",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Pottery painting studio",
+        "startsAt": "2026-10-12T00:00:00.000Z",
+        "endsAt": "2026-10-12T00:00:00.000Z",
+        "venue": "Orlando (Altamonte springs, FL)",
+        "url": "https://www.eventbrite.com/e/pottery-painting-studio-tickets-1996013850157",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Free Lunch and Learn: Connecting Hearing Loss & Dementia",
+        "startsAt": "2026-10-13T00:00:00.000Z",
+        "endsAt": "2026-10-13T00:00:00.000Z",
+        "venue": "One Senior Place Orlando (Altamonte Springs, FL)",
+        "url": "https://www.eventbrite.com/e/free-lunch-and-learn-connecting-hearing-loss-dementia-tickets-2000992651887",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Referral Networking Group",
+        "startsAt": "2026-10-13T00:00:00.000Z",
+        "endsAt": "2026-10-13T00:00:00.000Z",
+        "venue": "Azalea Health and Wellness (Altamonte Springs, FL)",
+        "url": "https://www.eventbrite.com/e/referral-networking-group-tickets-2003065581074",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Money After Dark",
+        "startsAt": "2026-10-14T00:00:00.000Z",
+        "endsAt": "2026-10-14T00:00:00.000Z",
+        "venue": "Regions Bank (Altamonte Springs, FL)",
+        "url": "https://www.eventbrite.com/e/money-after-dark-tickets-2001896857390",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Altamonte Springs Business Networking",
+        "startsAt": "2026-10-14T00:00:00.000Z",
+        "endsAt": "2026-10-14T00:00:00.000Z",
+        "venue": "360 W State Rd 436 (Altamonte Springs, FL)",
+        "url": "https://www.eventbrite.com/e/altamonte-springs-business-networking-tickets-2001674836319",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "HBR Book Webinar:  Resilient Optimism",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/hbr-book-webinar-resilient-optimism-tickets-2002123901485",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "ARBD in the community: recognition, response and pathways forward",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/arbd-in-the-community-recognition-response-and-pathways-forward-tickets-1987995657527",
+        "source": "Eventbrite"
+      }
+    ],
+    "apopka": [
+      {
+        "title": "HBR Book Webinar:  Resilient Optimism",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/hbr-book-webinar-resilient-optimism-tickets-2002123901485",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "ARBD in the community: recognition, response and pathways forward",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/arbd-in-the-community-recognition-response-and-pathways-forward-tickets-1987995657527",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Drive In Movie At The Well",
+        "startsAt": "2026-10-17T00:00:00.000Z",
+        "endsAt": "2026-10-17T00:00:00.000Z",
+        "venue": "The Well Activity Center (Apopka, FL)",
+        "url": "https://www.eventbrite.com/e/drive-in-movie-at-the-well-tickets-2003036307516",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "AURA - Day Party",
+        "startsAt": "2026-10-17T00:00:00.000Z",
+        "endsAt": "2026-10-17T00:00:00.000Z",
+        "venue": "40 E 5th St (Apopka, FL)",
+        "url": "https://www.eventbrite.com/e/aura-day-party-tickets-2002461970659",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Ladies in Pink Host \"Unhinged Plant Bingo\"",
+        "startsAt": "2026-10-18T00:00:00.000Z",
+        "endsAt": "2026-10-18T00:00:00.000Z",
+        "venue": "The Bloom Lounge - Apopka Florist & Creative Space (Apopka, FL)",
+        "url": "https://www.eventbrite.com/e/ladies-in-pink-host-unhinged-plant-bingo-tickets-2001412580906",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Bowlero Apopka Family Fest",
+        "startsAt": "2026-10-18T00:00:00.000Z",
+        "endsAt": "2026-10-18T00:00:00.000Z",
+        "venue": "Bowlero Apopka (Apopka, FL)",
+        "url": "https://www.eventbrite.com/e/bowlero-apopka-family-fest-tickets-2002626756538",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Weekends in Apopka: Foodies + New Friends",
+        "startsAt": "2026-10-18T00:00:00.000Z",
+        "endsAt": "2026-10-18T00:00:00.000Z",
+        "venue": "Restaurant of the Weekend (Apopka, FL)",
+        "url": "https://www.eventbrite.com/e/weekends-in-apopka-foodies-new-friends-tickets-1965467563391",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Free Memory Talkin’ Tacos! Lunch & Learn with Metro Health at Morenas",
+        "startsAt": "2026-10-20T00:00:00.000Z",
+        "endsAt": "2026-10-20T00:00:00.000Z",
+        "venue": "Morenas Latin Bar & Grill (Apopka, FL)",
+        "url": "https://www.eventbrite.com/e/free-memory-talkin-tacos-lunch-learn-with-metro-health-at-morenas-tickets-2000314208645",
+        "source": "Eventbrite"
+      }
+    ],
+    "clermont": [
+      {
+        "title": "Master Gardener Library Talks - Clermont",
+        "startsAt": "2026-10-13T00:00:00.000Z",
+        "endsAt": "2026-10-13T00:00:00.000Z",
+        "venue": "Cooper Memorial Library (Clermont, FL)",
+        "url": "https://www.eventbrite.com/e/master-gardener-library-talks-clermont-tickets-1992828673207",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Coffee & Community: Nonprofit + Business Connect (Clermont)",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "venue": "Panera Bread (Clermont, FL)",
+        "url": "https://www.eventbrite.com/e/coffee-community-nonprofit-business-connect-clermont-tickets-1982497014939",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "HBR Book Webinar:  Resilient Optimism",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/hbr-book-webinar-resilient-optimism-tickets-2002123901485",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "ARBD in the community: recognition, response and pathways forward",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "url": "https://www.eventbrite.co.uk/e/arbd-in-the-community-recognition-response-and-pathways-forward-tickets-1987995657527",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Pressed Flower Art Frame Workshop",
+        "startsAt": "2026-10-15T00:00:00.000Z",
+        "endsAt": "2026-10-15T00:00:00.000Z",
+        "venue": "Everything Local Company (Clermont, FL)",
+        "url": "https://www.eventbrite.com/e/pressed-flower-art-frame-workshop-tickets-1994590863967",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Line Dancing",
+        "startsAt": "2026-10-16T00:00:00.000Z",
+        "endsAt": "2026-10-16T00:00:00.000Z",
+        "venue": "Florida Blue Center - Clermont (Clermont, FL)",
+        "url": "https://www.eventbrite.com/e/line-dancing-tickets-1995535868501",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "The Well Table | Picnic & Learn · Clermont Families",
+        "startsAt": "2026-10-17T00:00:00.000Z",
+        "endsAt": "2026-10-17T00:00:00.000Z",
+        "venue": "Lake Hiawatha Preserve (Clermont, FL)",
+        "url": "https://www.eventbrite.com/e/the-well-table-picnic-learn-clermont-families-tickets-2001883165437",
+        "source": "Eventbrite"
+      },
+      {
+        "title": "Awaken Your Inner Mystic ~ High Tea Social and Tarot Workshop",
+        "startsAt": "2026-10-17T00:00:00.000Z",
+        "endsAt": "2026-10-17T00:00:00.000Z",
+        "venue": "Erika’s Tea Room And Gifts (Clermont, FL)",
+        "url": "https://www.eventbrite.com/e/awaken-your-inner-mystic-high-tea-social-and-tarot-workshop-tickets-1998545878522",
+        "source": "Eventbrite"
+      }
+    ]
   }
 }
